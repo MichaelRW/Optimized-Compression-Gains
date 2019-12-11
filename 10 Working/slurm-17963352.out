@@ -1,0 +1,4548 @@
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+cat: /cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../../../lib64/../nix-support/propagated-native-build-inputs: No such file or directory
+warning: mkoctfile: building exited with failure status
+icc -c -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/include -I/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/include -fPIC -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave/.. -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include   -fopenmp -O2 -xCore-AVX2 -ftz -fp-speculation=safe -fp-model source   -I.  model_IHC_BEZ2018.c -o model_IHC_BEZ2018.o
+icc -c -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/include -I/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/include -fPIC -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave/.. -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include   -fopenmp -O2 -xCore-AVX2 -ftz -fp-speculation=safe -fp-model source   -I.  complex.c -o complex.o
+icpc -std=gnu++11 -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave/.. -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include   -fopenmp -O2 -xCore-AVX2 -ftz -fp-speculation=safe -fp-model source -shared -Wl,-Bsymbolic  -o model_IHC_BEZ2018.mex  model_IHC_BEZ2018.o complex.o   -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/lib/octave/4.2.1 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/lib -loctinterp -loctave -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/icc/2016.4.258/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/lib -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qrupdate/1.1.2/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib     -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib           -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib  -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib   -L/cvmfs/soft.computecanada.ca/nix/store/xnprhsnzhfa3r0m0w7pahp815405wykw-freetype-2.6.5/lib -lfreetype -lhdf5  -lz -lfftw3_threads -lfftw3 -lfftw3f_threads -lfftw3f -lGL -lGLU -L/cvmfs/soft.computecanada.ca/nix/store/048n2p2rri6jd0mm3mmrfppz5jk247av-fontconfig-2.11.1-lib/lib -L/cvmfs/soft.computecanada.ca/nix/store/xnprhsnzhfa3r0m0w7pahp815405wykw-freetype-2.6.5/lib -lfontconfig -lfreetype  -lX11  -lgl2ps   -Wl,-Bstatic -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic              -lcurl -lcholmod -lumfpack -lamd -lcamd -lcolamd -lccolamd -lcxsparse -lsuitesparseconfig -larpack -lqrupdate -lfftw3_threads -lfftw3 -lfftw3f_threads -lfftw3f -Wl,-Bstatic -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic -Wl,-Bstatic -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic -lreadline -lncurses  -L/cvmfs/soft.computecanada.ca/nix/store/379hmhj1b4rqklqx3zj3b8ql2qsfnsid-pcre-8.39/lib -lpcre    -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/icc/2016.4.258/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/lib -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qrupdate/1.1.2/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/metis/5.1.0/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib/intel64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/ifort/2016.4.258/compilers_and_libraries_2016.4.258/linux/compiler/lib/intel64_lin -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64/../lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64/../lib64/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib/../lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib/../lib64/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib/../lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib/../lib64/ -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/ -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../../../lib64 -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../../../lib64/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/metis/5.1.0/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/lib/intel64/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib/intel64/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qrupdate/1.1.2/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/lib/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/lib/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib/ -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../.. -limf -lm -liomp5 -lpthread -lifport -lifcore -lsvml -lipgo -lirc -lirc_s -ldl -lutil -lm  -liomp5 -lpthread
+cat: /cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../../../lib64/../nix-support/propagated-native-build-inputs: No such file or directory
+warning: mkoctfile: building exited with failure status
+icc -c -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/include -I/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/include -fPIC -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave/.. -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include   -fopenmp -O2 -xCore-AVX2 -ftz -fp-speculation=safe -fp-model source   -I.  model_Synapse_BEZ2018.c -o model_Synapse_BEZ2018.o
+icc -c -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/include -I/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/include -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/include -fPIC -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave/.. -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include   -fopenmp -O2 -xCore-AVX2 -ftz -fp-speculation=safe -fp-model source   -I.  complex.c -o complex.o
+icpc -std=gnu++11 -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave/.. -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include/octave-4.2.1/octave -I/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/include   -fopenmp -O2 -xCore-AVX2 -ftz -fp-speculation=safe -fp-model source -shared -Wl,-Bsymbolic  -o model_Synapse_BEZ2018.mex  model_Synapse_BEZ2018.o complex.o   -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/lib/octave/4.2.1 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/octave/4.2.1/lib -loctinterp -loctave -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/icc/2016.4.258/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/lib -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qrupdate/1.1.2/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib     -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib           -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib  -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib   -L/cvmfs/soft.computecanada.ca/nix/store/xnprhsnzhfa3r0m0w7pahp815405wykw-freetype-2.6.5/lib -lfreetype -lhdf5  -lz -lfftw3_threads -lfftw3 -lfftw3f_threads -lfftw3f -lGL -lGLU -L/cvmfs/soft.computecanada.ca/nix/store/048n2p2rri6jd0mm3mmrfppz5jk247av-fontconfig-2.11.1-lib/lib -L/cvmfs/soft.computecanada.ca/nix/store/xnprhsnzhfa3r0m0w7pahp815405wykw-freetype-2.6.5/lib -lfontconfig -lfreetype  -lX11  -lgl2ps   -Wl,-Bstatic -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic              -lcurl -lcholmod -lumfpack -lamd -lcamd -lcolamd -lccolamd -lcxsparse -lsuitesparseconfig -larpack -lqrupdate -lfftw3_threads -lfftw3 -lfftw3f_threads -lfftw3f -Wl,-Bstatic -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic -Wl,-Bstatic -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic -lreadline -lncurses  -L/cvmfs/soft.computecanada.ca/nix/store/379hmhj1b4rqklqx3zj3b8ql2qsfnsid-pcre-8.39/lib -lpcre    -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/icc/2016.4.258/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/lib/intel64 -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/lib -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qrupdate/1.1.2/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/metis/5.1.0/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib/intel64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/ifort/2016.4.258/compilers_and_libraries_2016.4.258/linux/compiler/lib/intel64_lin -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64/../lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64/../lib64/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib/../lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib/../lib64/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib/../lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib/../lib64/ -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/ -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../../../lib64 -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../../../lib64/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/fftw/3.3.6/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/suitesparse/4.5.4/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/metis/5.1.0/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/mkl/lib/intel64/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/imkl/11.3.4.258/lib/intel64/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qrupdate/1.1.2/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/hdf5/1.8.18/lib/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/qt-5.6.1/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/qhull/2015.2/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/glpk/4.61/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/arpack-ng/3.4.0/lib/ -L/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/java/1.8.0_121/lib/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib64/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/gcc-5.4.0/lib/ -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib64 -L/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/lib/ -L/cvmfs/soft.computecanada.ca/nix/store/lvjwgn6hpngyy6k4xqcqa9h2cxy3fl30-gfortran-5.4.0/lib/gcc/x86_64-unknown-linux-gnu/5.4.0/../../.. -limf -lm -liomp5 -lpthread -lifport -lifcore -lsvml -lipgo -lirc -lirc_s -ldl -lutil -lm  -liomp5 -lpthread
+warning: fopen: '/home/heinermh/Optim_2019/TIMIT/DR5/FUTB0/SA1.WAV' found by searching load path
+warning: called from
+    readsph at line 85 column 7
+    gain_simulation at line 39 column 9
+    test_speech_gains2a at line 17 column 1
+SFS =  16000
+warning: fopen: '/home/heinermh/Optim_2019/TIMIT/DR5/FUTB0/SA1.PHN' found by searching load path
+warning: called from
+    textread at line 136 column 7
+    gain_simulation at line 43 column 17
+    test_speech_gains2a at line 17 column 1
+phone no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  21138
+ans = 1
+phone no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  48864
+ans = 1
+phone no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  71326
+ans = 1
+phone no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  98800
+ans = 1
+phone no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  108000
+ans = 1
+phone no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  117800
+ans = 1
+phone no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  159000
+ans = 1
+phone no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  186000
+ans = 1
+phone no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  192000
+ans = 1
+phone no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  218664
+ans = 1
+phone no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  232000
+ans = 1
+phone no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  244000
+ans = 1
+phone no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  246500
+ans = 1
+phone no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  285000
+ans = 1
+phone no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  315000
+ans = 1
+phone no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  336600
+ans = 1
+phone no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  351214
+ans = 1
+phone no 18
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  373376
+ans = 1
+phone no 19
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  383000
+ans = 1
+phone no 20
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  389064
+ans = 1
+phone no 21
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  403964
+ans = 1
+phone no 22
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  418000
+ans = 1
+phone no 23
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  448000
+ans = 1
+phone no 24
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  463488
+ans = 1
+phone no 25
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  497950
+ans = 1
+phone no 26
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  534000
+ans = 1
+phone no 27
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  556276
+ans = 1
+phone no 28
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  561326
+ans = 1
+phone no 29
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  585114
+ans = 1
+phone no 30
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  603500
+ans = 1
+phone no 31
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  609150
+ans = 1
+phone no 32
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  621788
+ans = 1
+phone no 33
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  641414
+ans = 1
+phone no 34
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  671788
+ans = 1
+phone no 35
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+ans =  5
+adj no 1
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 2
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 3
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 4
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 5
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 6
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 7
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 8
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 9
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 10
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 11
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 12
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 13
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 14
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 15
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 16
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+adj no 17
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Check your inputs!
+binw =  1
+remainder = 0
+i =  686938
+ans = 1
+phone no 36
+Analyzing audiogram for cat AN model
+Mixed Inner & Outer Hair Cell Loss
+Warning: You are appling amplification gains to a normal AP.
+No Amplification Prescription Applied.
+Check your inputs!
+binw =  1
+remainder = 0
+/var/spool/slurmd/job17963352/slurm_script: Zeile 5: 17417 Getötet                octave test_speech_gains2a.m
+slurmstepd: error: Detected 1 oom-kill event(s) in step 17963352.batch cgroup.
