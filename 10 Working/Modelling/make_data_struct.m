@@ -1,6 +1,9 @@
+
 function [ data_struct ] = make_data_struct( varargin )
+
 % make_data_struct(data, FS, spl)
 % make_data_struct(data, FS, spl, audiogram_struct, 'prescription_type')
+
 
 if length(varargin) < 2
     disp('Error, not enough inputs');

@@ -1,9 +1,12 @@
+
 function [ error ] = psth_err_mean( psth_struct1, psth_struct2, window, varargin )
-%=====================================================================%
-%                           FINE TIME                      %
-%=====================================================================%
+
+
+%% Fine Timing
 if strcmp(psth_struct1.type, 'FINE') && strcmp(psth_struct2.type, 'FINE')
-    ##  if (nargin == 2), additional one because of window
+    
+%     if (nargin == 2), additional one because of window
+        
         if (nargin == 3)
             disp('Not enough input variables')
         elseif strcmp(varargin{1}, 'make') && strncmpi(psth_struct1.calc_details, 'detailed', 6)

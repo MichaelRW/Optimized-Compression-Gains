@@ -1,4 +1,6 @@
-function gain_simulation(data_file,spl,adj,loss,pres,CFcount,IOHC_loss,binwidth, synaptopathy)
+
+function [ collector ] = gain_simulation( data_file, spl, adj, loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy )
+
 %GAIN_SIMULATION
 %
 % Ex:
@@ -17,20 +19,22 @@ function gain_simulation(data_file,spl,adj,loss,pres,CFcount,IOHC_loss,binwidth,
 % Example:
 % gain_simulation( 'SA1', 60, [-40 40], 5, 'NAL-R', 40, 'Mixed', 10e-6 );
 
-% Creates a save directory and switches into it.                          %
-%=========================================================================%
+
+%% Generate MAT Filename
+
 save_name = [data_file '_spl_' num2str(spl) '_adj_' num2str(adj(1)) '_' ...
     num2str(adj(end)) '_loss_' num2str(loss) '_pres_' pres '_CFcount_' ...
     num2str(CFcount) '_IOHCimp_' IOHC_loss '_binwidth_' ...
     num2str(binwidth*10e6)];
-%=========================================================================%
-[data,FS]= readsph([data_file '.WAV']);
-data = set_spl(data(:)',spl);
 
-[start,stop,~] = textread([data_file '.PHN'],'%f%f%s');
-start = start + 1;
+[ data, FS ]= readsph( [data_file '.WAV'] );
+    data = set_spl( data(:)', spl );
 
-adj = round(adj/5)*5; adj = adj(1):5:adj(end);
+[ start, stop, ~ ] = textread( [data_file '.PHN'],'%f%f%s' );
+    start = start + 1;
+
+adj = round(adj/5) * 5;
+    adj = adj(1):5:adj(end);
 
 sentence = [];
 
@@ -42,47 +46,36 @@ collector = struct('data_file',data_file,'spl',spl,'adj',adj,'loss',loss,'pres',
 % part constisting of all phonemes up to the newly added phoneme of this
 % loop iteration
 
-for l = 1 %: length(start)
+% for l = 2:1:( length(start) - 1 )
+for l = 2 %: length(start)
     
     disp(['phone no ' num2str(l)])
     
-    % read data vector from start of this phoneme to stop of this phoneme
-    next_phone = data(start(l):stop(l));
+    next_phone = data( start(l):1:stop(l) );  % Read data vector from start of this phoneme to stop of this phoneme.
     
-    % appends phonemes with every loop interation
-    %                       adj_spl gives adjusted data vector, 0 means no
-    %                       adjustment
-    pre_sentence = [sentence adj_spl(next_phone,0)];
+    pre_sentence = [ sentence adj_spl(next_phone, 0) ];  % Append phonemes with every loop interation with no SPL adjustment.
     
+    psth_normal = make_psth_struct( pre_sentence, FS,  get_spl( pre_sentence ), ...
+        1, 'none', CFcount, IOHC_loss, binwidth, 'healthy' );
     
-    % psth =      make_psth_struct(data,         FS,  spl,                  ...
-    % loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy)
+    window = getWindow( start(l), stop(l), FS, psth_normal.psth_time, psth_normal.psth_freq );
     
-    % where get_spl simply calculates the SPL from the current stimulus
-    psth_normal = make_psth_struct(pre_sentence, FS,  get_spl(pre_sentence), ...
-        1, 'none', CFcount, IOHC_loss, binwidth, 'healthy');
+    error_m = psth_err_mean( psth_normal, psth_normal, window, 'make' );  % Structure "error_m" that later contains the optimal gain, etc.
     
+
+    
+    % This loop finds optimal gain for one phoneme.
     %
-    window = getWindow(start(l), stop(l), FS, psth_normal.psth_time, psth_normal.psth_freq);
-    
-    
-    % set up struct error_m, which later contains the optimal gain etc.
-    error_m      = psth_err_mean( psth_normal, psth_normal, window, 'make' );
-    
-    %----------------------------------------------------------------------
-    
-    % this loop finds optimal gain for one phoneme, when the ones before
-    % are already optimized; so if the one phoneme is already optimized,
-    % what is then the optimal gain for the next one
-    % total result is then the adjustment, where difference of both psths is minimum
+    % When the gain for the previous phonemes are optimized, what is then
+    % the optimal gain for the next phoneme.
+    %
+    % Total result is then the adjustment, where the difference of both
+    % PSTHs is a minimum.
     for j = 1: length(adj)
         
+        fprintf( 1, '\n\tGain adjustment: %d of %d - %d dB', j, numel(adj), adj(j) );
         
-        disp(['adj no ' num2str(j)])
-        
-        %
-        pre_sentence = [sentence adj_spl(next_phone,adj(j))];
-        
+        pre_sentence = [ sentence adj_spl( next_phone, adj(j)) ];        
         
         % calculates psth of the impaired system with newly adapted SPL stimulus
         psth_impair = make_psth_struct(pre_sentence, FS,  get_spl(pre_sentence), ...
@@ -109,14 +102,13 @@ for l = 1 %: length(start)
     collector.spl_col = [collector.spl_col get_spl(next_phone)];
     collector.psth_err = [collector.psth_err error_m.psth ];
     
-    directoryname = 'Sentence_Simulations';
     
-    mkdir(directoryname)
-    
-    save('-mat7-binary', [ '.' filesep directoryname filesep save_name '.mat'], 'collector')
-    
-    % 10 sec, pause is needed, because saving process takes some time
-    pause(10)
+%     directoryname = 'Sentence_Simulations';    
+%         mkdir(directoryname)
+%     
+%     save('-mat7-binary', [ '.' filesep directoryname filesep save_name '.mat'], 'collector');
+%         pause(10);  % 10 sec, pause is needed, because saving process takes some time
+        
 end
 
 

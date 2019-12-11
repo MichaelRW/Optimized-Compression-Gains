@@ -1,17 +1,30 @@
-pkg load signal
-addpath(genpath(pwd))
-mexANmodel
 
-% gain_simulation computes optimal gains for all phonemes of a sentence 
+
+%% Environment
+
+close all; clear all; clc;
+set(0, 'DefaultFigureWindowStyle', 'normal');
+
+addpath( genpath(pwd), '-begin' );
+
+% pkg load signal  % For Octave
+% mexANmodel
+
+
+%% Gain Simulation
+
+% "gain_simulation.m" computes optimal gains for all phonemes of a sentence 
 % and saves the results in the struct collector in a .mat-file named similar to
-% the following example. 
-% example: 
-% SA1_spl_45_adj_-40_40_loss_2_pres_NAL-R_CFcount_30_IOHCimp_Mixed_binwidth_100.mat
+% the following example.
+%
+% Example MAT filename:  "SA1_spl_45_adj_-40_40_loss_2_pres_NAL-R_CFcount_30_IOHCimp_Mixed_binwidth_100.mat"
 
-gain_simulation('SA1',45,[-40:5:40],2,'NAL-R',30,'Mixed',10e-6, 'healthy');
+% gain_simulation( 'SA1', 45, [-40:5:40], 2, 'NAL-R', 30, 'Mixed', 10e-6, 'healthy' );
+collector = gain_simulation( 'SA1', 45, [-40:5:-30], 2, 'NAL-R', 5, 'Mixed', 10e-6, 'healthy' );  % FIXME
 
-% usage: 
-% gain_simulation(data_file,spl,adj,loss,pres,CFcount,IOHC_loss,binwidth, synaptopathy)
+% Usage:
+%
+% gain_simulation( data_file, spl, adj, loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy )
 %
 % where the inputs respectively are: 
 %
@@ -26,4 +39,6 @@ gain_simulation('SA1',45,[-40:5:40],2,'NAL-R',30,'Mixed',10e-6, 'healthy');
 % CFcount          -> The number of CFs to use. 40 is usually good.
 % IOHC_loss        -> purely outer hair cell loss ('OHCL'), inner hair cell
 %                     loss ('IHCL'), or 'Mixed' hair cell loss.
-% binwidth         -> Neurogram Binwidth. Fine: 10e-6, Mean: 80e-6;
+% binwidth         -> Neurogram Binwidth. Fine: 10e-6, Mean: 80e-6
+
+
