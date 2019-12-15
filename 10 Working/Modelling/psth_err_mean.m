@@ -41,17 +41,17 @@ if ( strcmp(psth_struct1.type, 'FINE') && strcmp(psth_struct2.type, 'FINE') )
     p1w = psth_struct1.psth.*window;
         figure; ...
             subplot(2, 1, 1); plot( p1w(1, :) ); xlim( [1 length(psth_struct1.psth(1, :))] ); grid on; title( 'Normal PSTH' );
-            subplot(2, 1, 2); plot( psth_struct1.psth(1, :)); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct1.psth(1, :)) 0 1e3] ); grid on;
+            subplot(2, 1, 2); plot( psth_struct1.psth(1, :)); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct1.psth(1, :)) -50 1e3] ); grid on;
         
     p2w = psth_struct2.psth.*window;
         figure; ...
-            subplot(2, 1, 1); plot( p2w(1, :) ); xlim( [1 length(psth_struct2.psth(1, :))] ); grid on; title( sprintf('Impaired PSTH - %d dB Gain', varargin{2} ) );
-            subplot(2, 1, 2); plot( psth_struct2.psth(1, :) ); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct2.psth(1, :)) 0 1e3] ); grid on;
+            subplot(2, 1, 1); plot( p2w(1, :) ); xlim( [1 length(psth_struct2.psth(1, :))] ); grid on; title( sprintf('Impaired PSTH at %d dB Gain', varargin{2} ) );
+            subplot(2, 1, 2); plot( psth_struct2.psth(1, :) ); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct2.psth(1, :)) -50 1e3] ); grid on;
     
     % mean absolute error of the two psth,
     error.psth = [error.psth mean(abs(p1w(:) - p2w(:)))];
     
-    [error.psth_opti error.SPL_uniq] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
+    [ error.psth_opti, error.SPL_uniq ] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
     
     %=====================================================================%
     
@@ -88,7 +88,7 @@ elseif strcmp(psth_struct1.type, 'AVG') && strcmp(psth_struct2.type, 'AVG')
     
     if strncmpi(psth_struct1.calc_details, 'detailed', 6)
         error.hist = [error.hist mean(abs(psth_struct1.hist(:) - psth_struct2.hist(:)))];
-        [error.hist_opti error.SPL_uniq] = find_mxmn( error.SPL, error.hist, error.ADJ, 'min' );
+        [ error.hist_opti, error.SPL_uniq ] = find_mxmn( error.SPL, error.hist, error.ADJ, 'min' );
     end
     
     
@@ -96,14 +96,14 @@ elseif strcmp(psth_struct1.type, 'AVG') && strcmp(psth_struct2.type, 'AVG')
     %                                PSTH                                 %
     %=====================================================================%
     p1w = psth_struct1.psth.*window;
-        figure; plot(psth_struct1.psth(1, :)); hold on; plot(window(1, :), 'r'); grid on; title( 'Normal PSTH' );
+%         figure; plot(psth_struct1.psth(1, :)); hold on; plot(window(1, :), 'r'); grid on; title( 'Normal PSTH' );
     
     p2w = psth_struct2.psth.*window;
-        figure; plot(psth_struct2.psth(1, :)); hold on; plot(window(1, :), 'r'); grid on; title( 'Impaired PSTH' );
+%         figure; plot(psth_struct2.psth(1, :)); hold on; plot(window(1, :), 'r'); grid on; title( 'Impaired PSTH' );
     
     error.psth = [error.psth mean(abs(p1w(:) - p2w(:)))];
     
-    [error.psth_opti error.SPL_uniq] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
+    [ error.psth_opti, error.SPL_uniq ] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
     %=====================================================================%
     
     error.SPL  = [error.SPL psth_struct1.data_orig.SPL];
