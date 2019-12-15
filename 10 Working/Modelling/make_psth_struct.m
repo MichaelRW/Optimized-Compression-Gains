@@ -8,7 +8,7 @@ audi = audiograms( loss, CFcount, IOHC_loss );
 data = make_data_struct( data, FS, spl, audi, pres, 'detailed', synaptopathy); % 'simple' Or 'detailed'
 
 % PSTH may constructs the PSTH of the model fibers at given data, audiogram and binwidth.
-psth = PSTHmay( data, audi, binwidth, 'y' );
+psth = PSTHmay( data, audi, binwidth, 'n' );
 
 
 end

@@ -1,47 +1,54 @@
-function psth_plot( psth_struct )
 
-%% AUDIOGRAMS
+function [] = psth_plot( psth_struct )
 
-figure;
-plot(psth_struct.audiogram_struct.F/1e3, -psth_struct.audiogram_struct.H,'rx', 'Markersize', 20, 'Linewidth', 4); ylim([-120 10]); set(gca, 'XScale', 'linear')
 
-hold on;
+%% Audiogram
 
-line(3.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
-line(4.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
-line(5.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
-line(6.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
-  
-line([0 8000], 10*ones(1,2),'color','k');
-line([0 8000], -10*ones(1,2),'color','k');
-line([0 8000], -30*ones(1,2),'color','k');
-line([0 8000], -50*ones(1,2),'color','k');
-line([0 8000], -70*ones(1,2),'color','k');
-line([0 8000], -90*ones(1,2),'color','k');
-line([0 8000], -110*ones(1,2),'color','k');
-line([0 8000], -120*ones(1,2),'color','k');
+figure; ...
     
-hold off;
-set(gca,'XAxisLocation','top');
-set(gca, 'XTick', [1 2 3 4 5 6 7]);
-set(gca, 'XTickLabel', [125 250 500 1000 2000 4000 8000]);
-set(gca, 'YTick', fliplr([0 -20 -40 -60 -80 -100 -120]));
-set(gca, 'YTickLabel', fliplr([0 20 40 60 80 100 120]));
-xlim([1 7]);
-ylim([-120 10]);
-grid;
-set(gca, 'GridLineStyle', '-');
-xlabel('Frequency (Hz)', 'FontSize', 16);
-ylabel('Hearing Threshold Loss (dB)', 'FontSize', 16);
-title([psth_struct.audiogram_struct.type ' Hearing Loss'], 'FontSize', 16);
+    plot(psth_struct.audiogram_struct.F/1e3, -psth_struct.audiogram_struct.H,'rx', 'Markersize', 20, 'Linewidth', 4); ylim([-120 10]); set(gca, 'XScale', 'linear')
 
-%% PLOTTINGS
-if strcmp(psth_struct.type, 'FINE')
+        hold on;
+
+        line(3.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
+        line(4.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
+        line(5.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
+        line(6.5*ones(1,2),[10 -120],'color','k','Linestyle','--');
+
+        line([0 8000], 10*ones(1,2),'color','k');
+        line([0 8000], -10*ones(1,2),'color','k');
+        line([0 8000], -30*ones(1,2),'color','k');
+        line([0 8000], -50*ones(1,2),'color','k');
+        line([0 8000], -70*ones(1,2),'color','k');
+        line([0 8000], -90*ones(1,2),'color','k');
+        line([0 8000], -110*ones(1,2),'color','k');
+        line([0 8000], -120*ones(1,2),'color','k');
+
+        hold off;
+        set(gca,'XAxisLocation','top');
+        set(gca, 'XTick', [1 2 3 4 5 6 7]);
+        set(gca, 'XTickLabel', [125 250 500 1000 2000 4000 8000]);
+        set(gca, 'YTick', fliplr([0 -20 -40 -60 -80 -100 -120]));
+        set(gca, 'YTickLabel', fliplr([0 20 40 60 80 100 120]));
+        xlim([1 7]);
+        ylim([-120 10]);
+        grid;
+        set(gca, 'GridLineStyle', '-');
+        xlabel('Frequency (Hz)', 'FontSize', 16);
+        ylabel('Hearing Threshold Loss (dB)', 'FontSize', 16);
+        title([psth_struct.audiogram_struct.type ' Hearing Loss'], 'FontSize', 16);
+        
+        
+        
+%% Plots
+
+if ( strcmp(psth_struct.type, 'FINE') )
 
     %% PSTH PLOT (Need to revise max/min)
     figure;
 %     imagesc(psth_struct.psth_time, psth_struct.psth_freq, psth_struct.psth, psth_struct.psth_mnmx);
-    imagesc(psth_struct.psth_time, psth_struct.psth_freq, abs(log10(psth_struct.psth)), [0 log10(4318)]);
+%     imagesc(psth_struct.psth_time, psth_struct.psth_freq, abs(log10(psth_struct.psth)), [0 log10(4318)]);
+imagesc( psth_struct.psth );  colorbar;  % FIXME
     
     axis xy;
     set(gca, 'YScale', 'log');
@@ -50,7 +57,7 @@ if strcmp(psth_struct.type, 'FINE')
     ylabel('Center Frequency (Hz)')
     xlabel('Time (s)')
     title('Neurogram')
-    xlim([0 0.03])
+%     xlim([0 0.03])
 
 %     %% PWRR
 % 
@@ -135,3 +142,5 @@ elseif strcmp(psth_struct.type, 'AVG')
     ylabel('Center Frequency (Hz)')
     xlabel('Rate Bins (# of spikes/sec/fiber)')
 end
+
+

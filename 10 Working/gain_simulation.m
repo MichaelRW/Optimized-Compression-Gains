@@ -29,12 +29,17 @@ save_name = [data_file '_spl_' num2str(spl) '_adj_' num2str(adj(1)) '_' ...
 
 [ data, FS ]= readsph( [data_file '.WAV'] );
     data = set_spl( data(:)', spl );
+    %
+    figure; plot(data); grid on; xlim([1 length(data)]); title( sprintf('TIMIT Sentence %s', data_file) );
 
 [ start, stop, ~ ] = textread( [data_file '.PHN'],'%f%f%s' );
     start = start + 1;
-
-adj = round(adj/5) * 5;
-    adj = adj(1):5:adj(end);
+    
+adjustmentStepSizes = diff(adj);
+    adj = round( adj/adjustmentStepSizes(1) ) * adjustmentStepSizes(1);  % FIXME
+%
+% adj = round(adj/5) * 5;
+%     adj = adj(1):5:adj(end);
 
 sentence = [];
 
@@ -46,23 +51,26 @@ collector = struct('data_file',data_file,'spl',spl,'adj',adj,'loss',loss,'pres',
 % part constisting of all phonemes up to the newly added phoneme of this
 % loop iteration
 
+phonemeReferenceIndex = 2;
+
 % for l = 2:1:( length(start) - 1 )
-for l = 2 %: length(start)
+for l = 2:4 %: length(start)
     
-    disp(['phone no ' num2str(l)])
+    disp( ['Phoneme Number: ' num2str(l) - 1] );
     
     next_phone = data( start(l):1:stop(l) );  % Read data vector from start of this phoneme to stop of this phoneme.
     
     pre_sentence = [ sentence adj_spl(next_phone, 0) ];  % Append phonemes with every loop interation with no SPL adjustment.
+        %
+        figure; plot(pre_sentence); grid on; axis( [1 length(data) -0.03 0.03] ); title(sprintf('Phoneme %d', l - 1)); shg;
     
     psth_normal = make_psth_struct( pre_sentence, FS,  get_spl( pre_sentence ), ...
         1, 'none', CFcount, IOHC_loss, binwidth, 'healthy' );
     
-    window = getWindow( start(l), stop(l), FS, psth_normal.psth_time, psth_normal.psth_freq );
+    window = getWindow( start(l), stop(l), FS, psth_normal.psth_time, psth_normal.psth_freq, start, stop, phonemeReferenceIndex );
     
     error_m = psth_err_mean( psth_normal, psth_normal, window, 'make' );  % Structure "error_m" that later contains the optimal gain, etc.
     
-
     
     % This loop finds optimal gain for one phoneme.
     %
@@ -73,34 +81,36 @@ for l = 2 %: length(start)
     % PSTHs is a minimum.
     for j = 1: length(adj)
         
-        fprintf( 1, '\n\tGain adjustment: %d of %d - %d dB', j, numel(adj), adj(j) );
+        fprintf( 1, '\n\tGain adjustment: %d of %d -> %d dB\n\n', j, numel(adj), adj(j) );
         
         pre_sentence = [ sentence adj_spl( next_phone, adj(j)) ];        
+            %
+%             figure; plot(pre_sentence); grid on; title(sprintf('Phoneme %d', l - 1)); shg; keyboard;
         
-        % calculates psth of the impaired system with newly adapted SPL stimulus
-        psth_impair = make_psth_struct(pre_sentence, FS,  get_spl(pre_sentence), ...
-            loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy);
+        % Calculates the PSTH of the impaired system with newly adapted SPL stimulus.
+        psth_impair = make_psth_struct( pre_sentence, FS,  get_spl(pre_sentence), ...
+            loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy );
         
-        % applies window to the phoneme 
-        window = getWindow(start(l), stop(l), FS, psth_impair.psth_time, psth_impair.psth_freq);
+        % Applies window to the working phoneme.
+        window = getWindow( start(l), stop(l), FS, psth_impair.psth_time, psth_impair.psth_freq, start, stop, phonemeReferenceIndex );
         
-        % appends the currently tested gain adjustment step
-        error_m.ADJ = [error_m.ADJ adj(j)];
+        % Appends the currently tested gain adjustment step.
+        error_m.ADJ = [ error_m.ADJ adj(j) ];
         
         % calculates error for the newly adjusted stim and gives back
         % difference of the normal and impaired psth, which makes smallest
         % psth error.
-        error_m     = psth_err_mean( psth_normal, psth_impair, window, error_m );
+        error_m = psth_err_mean( psth_normal, psth_impair, window, error_m, adj(j) );
         
     end
     
-    % appends all phonemes with now optimal gain after one another
-    sentence = [sentence adj_spl(next_phone,error_m.psth_opti)];
+    % Appends all phonemes with now optimal gain after one another.
+    sentence = [  sentence  adj_spl( next_phone, error_m.psth_opti )  ];
     
-    % appends the optimal gain adjustment of this phoneme
-    collector.adj_col = [collector.adj_col error_m.psth_opti];
-    collector.spl_col = [collector.spl_col get_spl(next_phone)];
-    collector.psth_err = [collector.psth_err error_m.psth ];
+    % Appends the optimal gain adjustment of this phoneme.
+    collector.adj_col = [  collector.adj_col  error_m.psth_opti  ];
+    collector.spl_col = [  collector.spl_col  get_spl(next_phone)  ];
+    collector.psth_err = [  collector.psth_err  error_m.psth  ];
     
     
 %     directoryname = 'Sentence_Simulations';    

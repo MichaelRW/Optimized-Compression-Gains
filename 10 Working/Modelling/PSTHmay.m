@@ -164,6 +164,8 @@ for i = 1:length(psth_freq)
 
     
     % Accumulate synapse responses for low spontaneous fibers.
+%     fprintf( 1, '\n\t\tComputing low spont. fiber responses.' );
+    %
     for ma = 1:nrep(1)        
         spont = sponts_concat(ma);  tabs = tabss_concat(ma);  trel = trels_concat(ma);
         
@@ -175,7 +177,9 @@ for i = 1:length(psth_freq)
     psth500k_a = sum(psth500k_a_single_fibers);
     
     
-    % Accumulate synapse responses for medium spontaneous fibers.    
+    % Accumulate synapse responses for medium spontaneous fibers.
+%     fprintf( 1, '\n\t\tComputing medium spont. fiber responses.' );
+    %
     for mb = 1:nrep(2)        
         spont = sponts_concat(mb+nrep(1));  tabs = tabss_concat(mb+nrep(1));  trel = trels_concat(mb+nrep(1));        
         
@@ -187,6 +191,8 @@ for i = 1:length(psth_freq)
     
    
     % Accumulate synapse responses for high spontaneous fibers.
+%     fprintf( 1, '\n\t\tComputing high spont. fiber responses.' );
+    %
     for mc = 1:nrep(3)
         spont = sponts_concat(mc+nrep(1)+nrep(2));  tabs = tabss_concat(mc+nrep(1)+nrep(2));  trel = trels_concat(mc+nrep(1)+nrep(2));        
         
@@ -202,7 +208,9 @@ for i = 1:length(psth_freq)
 
     pr = sum( reshape(psth500k, binw, len), 1 ) / sum(nrep) / binwidth; % psth in units of spikes/s/fiber
         pr = filtfilt( B, A, pr );
-            psth(i, :) = single(pr);   
+            psth(i, :) = single(pr);
+            
+% 	fprintf(1, '\n');
     
 end
 
@@ -236,6 +244,7 @@ if ( strncmpi(data_orig.calc_details, 'detailed', 6) )
         psth_struct.calc_details = 'detailed';
 
     if strcmp(psth_struct.type, 'FINE')
+        
         psth_struct.psth_norm = 1/sum(nrep)/binwidth;   % Normalization Coeff.
         %disp(['Calculating the Box plot and the Power Ratio and Phase Responses @ ' num2str(psth_struct.data_struct.approx_formants) ' Hz']);
         %psth_struct.phsr_freq = {}; psth_struct.phsr = {}; psth_struct.pwrr = [];
@@ -249,15 +258,20 @@ if ( strncmpi(data_orig.calc_details, 'detailed', 6) )
         % frequency components of a vowel.
         %[ psth_struct.boxp_freq, psth_struct.boxp] = fd_boxp( psth_struct );
         %psth_struct.boxp_mnmx = [min(psth_struct.boxp(:)) max(psth_struct.boxp(:))];
+        
     elseif strcmp(psth_struct.type, 'AVG')
+        
         disp('Calculating the Histogram Response')
         [ psth_struct.hist_bins, psth_struct.hist ] = fd_hist( psth_struct );
         psth_struct.hist_mnmx = [min(psth_struct.hist(:)) max(psth_struct.hist(:))];
+        
     end
 
+    
     if strncmpi(varargin{1},'y',1)
         psth_plot( psth_struct );
     end
+    
 else
     psth_struct.calc_details = 'simple';
 end

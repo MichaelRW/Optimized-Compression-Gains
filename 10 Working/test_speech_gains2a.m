@@ -3,7 +3,7 @@
 %% Environment
 
 close all; clear all; clc;
-set(0, 'DefaultFigureWindowStyle', 'normal');
+set(0, 'DefaultFigureWindowStyle', 'docked');
 
 addpath( genpath(pwd), '-begin' );
 
@@ -20,7 +20,10 @@ addpath( genpath(pwd), '-begin' );
 % Example MAT filename:  "SA1_spl_45_adj_-40_40_loss_2_pres_NAL-R_CFcount_30_IOHCimp_Mixed_binwidth_100.mat"
 
 % gain_simulation( 'SA1', 45, [-40:5:40], 2, 'NAL-R', 30, 'Mixed', 10e-6, 'healthy' );
-collector = gain_simulation( 'SA1', 45, [-40:5:-30], 2, 'NAL-R', 5, 'Mixed', 10e-6, 'healthy' );  % FIXME
+
+
+collector = gain_simulation( 'SA1', 45, [-40:40:0], 2, 'NAL-R', 5, 'Mixed', 10e-6, 'healthy' )
+
 
 % Usage:
 %

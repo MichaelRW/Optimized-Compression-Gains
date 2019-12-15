@@ -1,11 +1,13 @@
 
-function [ window ] = getWindow( start, stop, FS, psth_time, psth_freq )
+function [ window ] = getWindow( start, stop, FS, psth_time, psth_freq, startIndices, stopIndices, phonemeReferenceIndex )
 
-window_start = start/FS+(5e-3);
-window_end = stop/FS+(5e-3);
+% window_start = start/FS+(5e-3);
+window_start = ( start - startIndices(phonemeReferenceIndex) + 1 ) / FS + 5e-3;
+    start_index = find( abs( (psth_time(1, :) - window_start) ) < 1e-4, 1 );
 
-start_index = find(abs((psth_time(1,:)-window_start))<1e-4,1);
-finish_index = find(abs((psth_time(1,:)-window_end))<1e-4,1);
+% window_end = stop/FS+(5e-3);
+window_end = ( stop - startIndices(phonemeReferenceIndex) + 1 ) / FS + 5e-3;
+    finish_index = find( abs( (psth_time(1, :) - window_end) ) < 1e-4, 1 );
 
 
 ramp_indices = round(10e-3*FS);

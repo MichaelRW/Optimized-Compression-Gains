@@ -1,4 +1,7 @@
+
 function [ data_struct_new ] = ampl_pres( data_struct, audi_struct, pres_type, calc_details )
+
+
 % AMPL_PRES applies either NAL-R or DSL amplification prescriptions
 % 
 % [ data_struct_out ] = ampl_pres( data_struct_in, audi_struct, pres_type )
@@ -9,6 +12,7 @@ function [ data_struct_new ] = ampl_pres( data_struct, audi_struct, pres_type, c
 % data_struct_out along with the original data.
 %
 % See Also make_data_struct
+
 
 if strcmp(audi_struct.type, 'Normal')
     disp('Warning: You are appling amplification gains to a normal AP.');
