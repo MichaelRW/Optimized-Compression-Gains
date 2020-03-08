@@ -59,14 +59,14 @@ else
 end
     
 if strncmpi(IOHC_loss, 'OHCL', 4)
-    [Cohc,Cihc]=fitaudiogram2(FREQS,H,1);
+    [Cohc,Cihc]=fitaudiogram2(FREQS,H,2);
     disp('Impairment due to Outer Hair Cell Loss');
 elseif strncmpi(IOHC_loss, 'IHCL', 4)
-    [Cohc,Cihc]=fitaudiogram2(FREQS,H,1);
+    [Cohc,Cihc]=fitaudiogram2(FREQS,H,2);
     disp('Impairment due to Inner Hair Cell Loss');
 else
     IOHC_loss = 'Mixed';
-    [Cohc,Cihc]=fitaudiogram2(FREQS,H,1);
+    [Cohc,Cihc]=fitaudiogram2(FREQS,H,2);
     disp('Mixed Inner & Outer Hair Cell Loss');
 end
 
