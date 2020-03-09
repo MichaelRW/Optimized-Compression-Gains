@@ -143,13 +143,22 @@ binw = round(binwidth*fs);             % How many samples are in each bin.
     remainder = mod(length(dat),binw);      % Number of samples to cut off end.
     
 dat = dat(1:end-remainder);             % Make length multiple of binwidth.
-    len = 2*length(dat)/binw;               % New length of binned data.
 
-reptime = 2*length(dat)/fs; 
+len_fact = 1.2;
+    len = len_fact*length(dat)/binw;               % New length of binned data.
+
+reptime = len_fact*length(dat)/fs; 
 
 % Pre-allocation of a) LSR, b) MSR, c) HSR fibers
-psth500k_a_single_fibers = [];  psth500k_b_single_fibers = [];  psth500k_c_single_fibers = [];
-       
+%psth500k_a_single_fibers = [];  psth500k_b_single_fibers = [];  psth500k_c_single_fibers = [];
+
+
+vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, ts, reptime, Cohc(1), Cihc(1), 2 );
+    
+psth500k_a_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
+psth500k_b_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
+psth500k_c_single_fibers = NaN( length(psth_freq), length(vihc_temp) ); 
+ 
 %figure; hold on
 for i = 1:length(psth_freq)
     
@@ -161,7 +170,7 @@ for i = 1:length(psth_freq)
     
     % Generate inner hair cell response for each frequency.
     vihc_temp = model_IHC_BEZ2018( dat, psth_freq(i), 1, ts, reptime, Cohc(i), Cihc(i), 2 );
-
+   
     
     % Accumulate synapse responses for low spontaneous fibers.
 %     fprintf( 1, '\n\t\tComputing low spont. fiber responses.' );
@@ -206,7 +215,8 @@ for i = 1:length(psth_freq)
     psth500k = psth500k_a + psth500k_b + psth500k_c;  % Complete PSTH response.
         clear psth500k_a psth500k_b psth500k_c
 
-    pr = sum( reshape(psth500k, binw, len), 1 ) / sum(nrep) / binwidth; % psth in units of spikes/s/fiber
+    %pr = sum( reshape(psth500k, binw, len), 1 ) / sum(nrep) / binwidth; % psth in units of spikes/s/fiber
+    pr = sum( psth500k, 1 ) / sum(nrep) / binwidth;
         pr = filtfilt( B, A, pr );
             psth(i, :) = single(pr);
             
@@ -269,7 +279,7 @@ if ( strncmpi(data_orig.calc_details, 'detailed', 6) )
 
     
     if strncmpi(varargin{1},'y',1)
-        psth_plot( psth_struct );
+        %psth_plot( psth_struct ); % check again
     end
     
 else
