@@ -2,13 +2,14 @@
 
 %% Environment
 
-close all; clear all; clc;
+close all; 
+clear all; clc;
 set(0, 'DefaultFigureWindowStyle', 'docked');
 
 addpath( genpath(pwd), '-begin' );
 
-% pkg load signal  % For Octave
-% mexANmodel
+pkg load signal  % For Octave
+%mexANmodel
 
 
 %% Gain Simulation
@@ -22,11 +23,26 @@ addpath( genpath(pwd), '-begin' );
 % gain_simulation( 'SA1', 45, [-40:5:40], 2, 'NAL-R', 30, 'Mixed', 10e-6, 'healthy' );
 
 
-collector = gain_simulation( 'SA1', 45, [-40:40:0], 2, 'NAL-R', 5, 'Mixed', 10e-6, 'healthy' )
+
+collector_mr = gain_simulation( 'SA1', 45, [-40:20:40], 2, 'NAL-R', 5, 'Mixed', 100e-6, 'healthy' )
+%collector = gain_simulation(    'SA1', 45, [-40:20:40], 2, 'NAL-R', 5, 'Mixed', 10e-6,  'healthy' )
+% Usage:q
 
 
-% Usage:
-%
+    directoryname = 'Sentence_Simulations';    
+
+         mkdir(directoryname)
+save_name = ['Sentence_Simulations' '_spl_' num2str(45) '_adj_' num2str(-40) '_' ...         
+num2str(40) '_loss_' num2str(2) '_pres_' 'NAL-R' '_CFcount_' ...
+num2str(5) '_IOHCimp_' 'Mixed' '_binwidth_' ...
+num2str(100e-6*10e6)];
+         
+ 
+%     
+    save('-mat7-binary', [ '.' filesep directoryname filesep save_name '.mat'], 'collector_mr');
+        pause(10);  % 10 sec, pause is needed, because saving process takes some time
+        
+
 % gain_simulation( data_file, spl, adj, loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy )
 %
 % where the inputs respectively are: 

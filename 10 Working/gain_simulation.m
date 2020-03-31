@@ -54,7 +54,7 @@ collector = struct('data_file',data_file,'spl',spl,'adj',adj,'loss',loss,'pres',
 phonemeReferenceIndex = 2;
 
 % for l = 2:1:( length(start) - 1 )
-for l = 2:4 %: length(start)
+for l = 2: 1 :  length(start)
     
     disp( ['Phoneme Number: ' num2str(l) - 1] );
     

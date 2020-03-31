@@ -39,15 +39,15 @@ if ( strcmp(psth_struct1.type, 'FINE') && strcmp(psth_struct2.type, 'FINE') )
     MAX_Y_VALUE = 500;
     %
     p1w = psth_struct1.psth.*window;
-        figure; ...
-            subplot(2, 1, 1); plot( p1w(1, :) ); xlim( [1 length(psth_struct1.psth(1, :))] ); grid on; title( 'Normal PSTH' );
-            subplot(2, 1, 2); plot( psth_struct1.psth(1, :)); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct1.psth(1, :)) -50 1e3] ); grid on;
-        
+%        figure; ...
+%            subplot(2, 1, 1); plot( p1w(1, :) ); xlim( [1 length(psth_struct1.psth(1, :))] ); grid on; title( 'Normal PSTH' );
+%            subplot(2, 1, 2); plot( psth_struct1.psth(1, :)); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct1.psth(1, :)) -50 1e3] ); grid on;
+%        
     p2w = psth_struct2.psth.*window;
-        figure; ...
-            subplot(2, 1, 1); plot( p2w(1, :) ); xlim( [1 length(psth_struct2.psth(1, :))] ); grid on; title( sprintf('Impaired PSTH at %d dB Gain', varargin{2} ) );
-            subplot(2, 1, 2); plot( psth_struct2.psth(1, :) ); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct2.psth(1, :)) -50 1e3] ); grid on;
-    
+%        figure; ...
+%            subplot(2, 1, 1); plot( p2w(1, :) ); xlim( [1 length(psth_struct2.psth(1, :))] ); grid on; title( sprintf('Impaired PSTH at %d dB Gain', varargin{2} ) );
+%            subplot(2, 1, 2); plot( psth_struct2.psth(1, :) ); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct2.psth(1, :)) -50 1e3] ); grid on;
+%    
     % mean absolute error of the two psth,
     error.psth = [error.psth mean(abs(p1w(:) - p2w(:)))];
     

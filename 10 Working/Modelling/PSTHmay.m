@@ -89,22 +89,22 @@ end
 %% Filter Design
 
 if strcmp(type, 'AVG')
-    Ap = 0.1;       % Passband Ripple
-    Ast = 20;      % Amplitude below passband
-    Fp = 250*binwidth;    % Cut-off at 250
-    Fst = 350*binwidth;   % to 350 Hz
-    %disp('Low-Pass Filtering psth with cut-off @ 250 - 350 Hz')
+%    Ap = 0.1;       % Passband Ripple
+%    Ast = 20;      % Amplitude below passband
+%    Fp = 250*binwidth;    % Cut-off at 250
+%    Fst = 350*binwidth;   % to 350 Hz
+%    %disp('Low-Pass Filtering psth with cut-off @ 250 - 350 Hz')
 elseif strcmp(type, 'FINE')
-    Ap = 0.1;
-    Ast = 20;
-    Fp = 6000*binwidth;
-    Fst = 8000*binwidth;
-    %disp('Low-Pass Filtering psth with cut-off @ 6000 - 8000 Hz')
+%    Ap = 0.1;
+%    Ast = 20;
+%    Fp = 6000*binwidth;
+%    Fst = 8000*binwidth;
+%    %disp('Low-Pass Filtering psth with cut-off @ 6000 - 8000 Hz')
 end
 % d = fdesign.lowpass(Fp,Fst,Ap,Ast);
 % hd = design(d,'butter','matchexactly','passband');
 % [h,t] = impz(hd);
-[B,A] = butter(6,Fp,'low');
+%[B,A] = butter(6,Fp,'low');
 % freqz(B,A)
 
 
@@ -140,15 +140,33 @@ end
 %% Main Loop
     
 binw = round(binwidth*fs);             % How many samples are in each bin.
+
+
     remainder = mod(length(dat),binw);      % Number of samples to cut off end.
     
 dat = dat(1:end-remainder);             % Make length multiple of binwidth.
 
+
+% simdur = ceil( T * 1.2 / psthbinwidth_mr ) * psthbinwidth_mr;
 len_fact = 1.2;
-    len = len_fact*length(dat)/binw;               % New length of binned data.
+    len = ceil(len_fact*length(dat)/binw);              % New length of binned data.
 
 reptime = len_fact*length(dat)/fs; 
 
+
+		% lines 52 to 56
+		    windur_ft = 32;  % Size of window for fine-timing neurogram.
+        smw_ft = hamming(windur_ft);
+     
+        windur_mr = 128;  % Size of window for mean-rate neurogram.
+        smw_mr = hamming(windur_mr);
+        
+        
+##        figure; plot(smw_ft)
+##        
+##        figure; plot(smw_mr)
+        
+t=1
 % Pre-allocation of a) LSR, b) MSR, c) HSR fibers
 %psth500k_a_single_fibers = [];  psth500k_b_single_fibers = [];  psth500k_c_single_fibers = [];
 
@@ -158,7 +176,7 @@ vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, ts, reptime, Cohc(1), Cihc(
 psth500k_a_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
 psth500k_b_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
 psth500k_c_single_fibers = NaN( length(psth_freq), length(vihc_temp) ); 
- 
+ dat_len = length(dat)
 %figure; hold on
 for i = 1:length(psth_freq)
     
@@ -186,6 +204,7 @@ for i = 1:length(psth_freq)
     psth500k_a = sum(psth500k_a_single_fibers);
     
     
+    
     % Accumulate synapse responses for medium spontaneous fibers.
 %     fprintf( 1, '\n\t\tComputing medium spont. fiber responses.' );
     %
@@ -208,16 +227,123 @@ for i = 1:length(psth_freq)
         [ psth500k_c_temp, ~, ~, ~, ~, ~ ] = model_Synapse_BEZ2018( vihc_temp, psth_freq(i), 1, ts, 1, 0, spont, tabs, trel );
             psth500k_c_single_fibers(mc, :) = psth500k_c_temp;
     end
+    
+    %figure; plot(psth500k_c_temp)
+    
     %
     psth500k_c = sum(psth500k_c_single_fibers);
+    
+    %figure; plot(psth500k_c)
+    
+    
+    
+    len_psth = floor(length(psth500k_a)/10)*10;
+    
+    psth500k_a = psth500k_a(1: len_psth);
+    psth500k_b = psth500k_b(1: len_psth);
+    psth500k_c = psth500k_c(1: len_psth);
+    
+    
+    
+    
+    
+    %figure; plot(psth500k_c)
     
     
     psth500k = psth500k_a + psth500k_b + psth500k_c;  % Complete PSTH response.
         clear psth500k_a psth500k_b psth500k_c
 
+    
+    
+        
     %pr = sum( reshape(psth500k, binw, len), 1 ) / sum(nrep) / binwidth; % psth in units of spikes/s/fiber
-    pr = sum( psth500k, 1 ) / sum(nrep) / binwidth;
-        pr = filtfilt( B, A, pr );
+    %psth_sec = sum( psth500k, 1 ) / sum(nrep) * fs;
+    
+   %% l_sec = length(psth_sec)
+	%figure; plot(psth_sec)
+	
+  
+##   psth_len =   length(psth_ft)
+## psthb = binw
+## resh_fact = length(psth_ft) / binw
+  
+  
+  
+  ft_binw = round(10e-6*fs)
+  mr_binw = binw
+  
+  psth_ft =      psth500k; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
+	psth_mr =      sum( reshape(psth500k, binw,            length(psth500k) / binw ));
+  
+  ps_mr_size = size(psth_mr)
+	
+  %figure; plot(psth_ft, 'x')
+	
+	
+        neurogram_ft = psth_ft + filter( smw_ft, 1, psth_ft );
+        neurogram_mr = psth_mr + filter( smw_mr, 1, psth_mr );
+        
+##   figure; plot(neurogram_ft, 'x')     
+##     
+##   figure; plot(neurogram_mr, 'o')     
+        
+        
+        
+        sz_ng_mr = size(neurogram_mr)
+        
+        %neurogram_Sout = neurogram_Sout + synout;  
+
+	% ?
+    %neurogram_ft = cell2mat( neurogram_ft' );    
+    %neurogram_mr = cell2mat( neurogram_mr' );
+    %neurogram_Sout = cell2mat( neurogram_Sout' );
+    % ?
+	
+  
+  % make sure neurogram is a column vector
+  neurogram_ft = neurogram_ft';
+  
+  neurogram_mr = neurogram_mr';
+  
+  
+    neurogram_ft = neurogram_ft(:, 1:windur_ft/2:end ); % this should be the overlap, I guess?????
+    t_ft = 0:windur_ft/2/fs:( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;        
+    
+    
+    
+    
+    
+    neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
+    t_mr = 0:windur_mr/2*(binw):( length(neurogram_mr) - 1 ) * windur_mr/2 * (binw);
+
+size(neurogram_mr)
+t_mr_disp = t_mr(end)   
+    sz_ng_mr_after = size(neurogram_mr)
+
+    
+    %t_Sout = 0:1/Fs:( size(neurogram_Sout, 2) - 1 ) / Fs;    
+
+    if strcmp(type, 'FINE')==1
+      pr = neurogram_ft;
+      %figure; plot(pr, 'o')
+      
+      % ... = t_ft
+    elseif strcmp(type, 'AVG')==1
+      t_mr = 0:windur_mr/2*(1/fs):( length(neurogram_mr) - 1 ) * windur_mr/2 * (1/fs);
+      pr = neurogram_mr;
+      len_pr = size(pr)
+      figure; hold on; plot(pr, '-')
+      xlabel('bin')
+      ylabel('average spike count')
+      hold off;
+      
+    end
+    
+    
+    
+    t=1
+    
+    %    pr = filtfilt( B, A, pr );
             psth(i, :) = single(pr);
             
 % 	fprintf(1, '\n');
@@ -228,8 +354,8 @@ fprintf(1, '\n\n');
 
 
 psth_struct.type = type;
-psth_struct.psth = psth(:,1:len);
-psth_struct.psth_time = [0:(len-1)]*binwidth;
+psth_struct.psth = psth(:,1:length(psth));
+psth_struct.psth_time = [0:(length(psth)-1)]*binwidth;
 
 psth_struct.psth_freq = psth_freq;
 psth_struct.psth_mnmx = [min(psth_struct.psth(:)) max(psth_struct.psth(:))];
