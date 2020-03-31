@@ -149,12 +149,9 @@ binw = round(binwidth*fs);             % How many samples are in each bin.
     
 dat = dat(1:end-remainder);             % Make length multiple of binwidth.
 
+% define simulation duration to integer multiple of binwidth to avoid
+% additional samples for later reshaping
 simdur = ceil( T * 1.2 / binwidth) * binwidth;
-len_fact = 1.2;
-    len = ceil(len_fact*length(dat)/binw);              % New length of binned data.
-
-%simdur = len_fact*length(dat)/fs; 
-
 
 		% lines 52 to 56
 		    windur_ft = 32;  % Size of window for fine-timing neurogram.
@@ -168,7 +165,7 @@ len_fact = 1.2;
 ##        
 ##        figure; plot(smw_mr)
         
-t=1
+
 % Pre-allocation of a) LSR, b) MSR, c) HSR fibers
 %psth500k_a_single_fibers = [];  psth500k_b_single_fibers = [];  psth500k_c_single_fibers = [];
 
@@ -271,13 +268,12 @@ for i = 1:length(psth_freq)
   
   
   
-  ft_binw = round(10e-6*fs)
-  mr_binw = binw
+  ft_binw = round(10e-6*fs);
+  mr_binw = binw;
   
   psth_ft =      psth500k; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
 	psth_mr =      sum( reshape(psth500k, mr_binw,            length(psth500k) / mr_binw ));
-  
-  ps_mr_size = size(psth_mr)
+
 	
   %figure; plot(psth_ft, 'x')
 	
@@ -289,9 +285,7 @@ for i = 1:length(psth_freq)
 ##     
 ##   figure; plot(neurogram_mr, 'o')     
         
-        
-        
-        sz_ng_mr = size(neurogram_mr)
+
         
         %neurogram_Sout = neurogram_Sout + synout;  
 
@@ -309,19 +303,11 @@ for i = 1:length(psth_freq)
   
   
     neurogram_ft = neurogram_ft(:, 1:windur_ft/2:end ); % this should be the overlap, I guess?????
-    t_ft = 0:windur_ft/2/fs:( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;        
-    
-    
-    
-    
-    
-    neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
-    t_mr = 0:windur_mr/2*(binw):( length(neurogram_mr) - 1 ) * windur_mr/2 * (binw);
+%     t_ft = 0:windur_ft/2/fs:( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;        
 
-size(neurogram_mr)
-t_mr_disp = t_mr(end)   
-    sz_ng_mr_after = size(neurogram_mr)
-
+    
+neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
+%     t_mr = 0:windur_mr/2*(binw):( length(neurogram_mr) - 1 ) * windur_mr/2 * (binw);
     
     %t_Sout = 0:1/Fs:( size(neurogram_Sout, 2) - 1 ) / Fs;    
 
@@ -333,18 +319,12 @@ t_mr_disp = t_mr(end)
     elseif strcmp(type, 'AVG')==1
       t_mr = 0:windur_mr/2*(1/fs):( length(neurogram_mr) - 1 ) * windur_mr/2 * (1/fs);
       pr = neurogram_mr;
-      len_pr = size(pr)
-      figure; hold on; plot(pr, '-')
+%       figure; hold on; plot(pr, '-')
       xlabel('bin')
       ylabel('average spike count')
       hold off;
       
     end
-    
-    
-    
-    t=1
-    
     %    pr = filtfilt( B, A, pr );
             psth(i, :) = single(pr);
             
