@@ -274,7 +274,8 @@ for i = 1:length(psth_freq)
   psth_ft =      psth500k; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
 	psth_mr =      sum( reshape(psth500k, mr_binw,            length(psth500k) / mr_binw ));
 
-	
+	      neurogram_ft = zeros( 1, size(vihc_temp, 2) );
+        neurogram_mr = zeros( 1, size(vihc_temp, 2) / binw);
   %figure; plot(psth_ft, 'x')
 	
 	
@@ -297,29 +298,37 @@ for i = 1:length(psth_freq)
 	
   
   % make sure neurogram is a column vector
-  neurogram_ft = neurogram_ft';
+##  neurogram_ft = neurogram_ft';
+##  
+##  neurogram_mr = neurogram_mr';
   
-  neurogram_mr = neurogram_mr';
+  neurogram_ft = neurogram_ft(:, 1:windur_ft/2:end );
   
   
-    neurogram_ft = neurogram_ft(:, 1:windur_ft/2:end ); % this should be the overlap, I guess?????
+  
+        t_ft = 0:(windur_ft/2/fs):( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;       
+    neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
+        t_mr = 0:windur_mr/2*binwidth:( size(neurogram_mr, 2) - 1 ) * windur_mr/2 * binwidth;        
+
+  
+  %neurogram_ft = neurogram_ft(:, 1:windur_ft/2:end ); % this should be the overlap, I guess?????
 %     t_ft = 0:windur_ft/2/fs:( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;        
 
     
-neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
+%neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
 %     t_mr = 0:windur_mr/2*(binw):( length(neurogram_mr) - 1 ) * windur_mr/2 * (binw);
     
     %t_Sout = 0:1/Fs:( size(neurogram_Sout, 2) - 1 ) / Fs;    
 
     if strcmp(type, 'FINE')==1
       pr = neurogram_ft;
-      %figure; plot(pr, 'o')
+      figure; plot(t_ft,pr, '-o')
       
       % ... = t_ft
     elseif strcmp(type, 'AVG')==1
       t_mr = 0:windur_mr/2*(1/fs):( length(neurogram_mr) - 1 ) * windur_mr/2 * (1/fs);
       pr = neurogram_mr;
-%       figure; hold on; plot(pr, '-')
+figure; hold on; plot(t_mr,pr, '-o')
       xlabel('bin')
       ylabel('average spike count')
       hold off;
