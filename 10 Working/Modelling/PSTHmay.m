@@ -27,7 +27,7 @@ function [ psth_struct ] = PSTHmay( S, aud, binwidth, varargin )
 %% Constants
 
 fs = 100e3;  % May change if FS is greater than fs %
-    ts = 1/fs;
+ts = 1/fs;
 
 b = double(single(1/binwidth));
 
@@ -45,7 +45,7 @@ if ( b >= fs) && (S.FS < b )
     type = 'FINE';
     fs = b;
     dat = resample(S.data,fs,S.FS);
-
+    T = length(dat)/fs;
 elseif ( b < fs ) && ( S.FS < fs )
     type = 'AVG';
     if ~iswhole(binwidth*fs)
@@ -54,6 +54,7 @@ elseif ( b < fs ) && ( S.FS < fs )
     end
     
     dat = resample(S.data,fs,S.FS);
+    T = length(dat)/fs;
     disp(['Returning Average Discharge Rate With Binwidth of ' num2str(binwidth) 's'])
 elseif ( S.FS >= fs ) && ( b < fs )
     type = 'AVG';
@@ -63,11 +64,13 @@ elseif ( S.FS >= fs ) && ( b < fs )
         return;
     end
     dat = S.data;
+    T = length(dat)/fs;
     disp(['Returning Average Discharge Rate With Binwidth of ' num2str(binwidth) 's'])
 elseif ( S.FS >= b ) && ( b >=fs )
     type = 'FINE';
     fs = S.FS;
     dat = S.data;
+    T = length(dat)/fs;
     disp('Returning Fine Timing Information')
 else
     disp('Something is wrong with FS and binwidth.')
@@ -146,12 +149,11 @@ binw = round(binwidth*fs);             % How many samples are in each bin.
     
 dat = dat(1:end-remainder);             % Make length multiple of binwidth.
 
-
-% simdur = ceil( T * 1.2 / psthbinwidth_mr ) * psthbinwidth_mr;
+simdur = ceil( T * 1.2 / binwidth) * binwidth;
 len_fact = 1.2;
     len = ceil(len_fact*length(dat)/binw);              % New length of binned data.
 
-reptime = len_fact*length(dat)/fs; 
+%simdur = len_fact*length(dat)/fs; 
 
 
 		% lines 52 to 56
@@ -171,7 +173,7 @@ t=1
 %psth500k_a_single_fibers = [];  psth500k_b_single_fibers = [];  psth500k_c_single_fibers = [];
 
 
-vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, ts, reptime, Cohc(1), Cihc(1), 2 );
+vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, ts, simdur, Cohc(1), Cihc(1), 2 );
     
 psth500k_a_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
 psth500k_b_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
@@ -187,7 +189,7 @@ for i = 1:length(psth_freq)
     trels_concat = [trels.LS(i,1:nrep(1)) trels.MS(i,1:nrep(2)) trels.HS(i,1:nrep(3))];
     
     % Generate inner hair cell response for each frequency.
-    vihc_temp = model_IHC_BEZ2018( dat, psth_freq(i), 1, ts, reptime, Cohc(i), Cihc(i), 2 );
+    vihc_temp = model_IHC_BEZ2018( dat, psth_freq(i), 1, ts, simdur, Cohc(i), Cihc(i), 2 );
    
     
     % Accumulate synapse responses for low spontaneous fibers.
@@ -273,7 +275,7 @@ for i = 1:length(psth_freq)
   mr_binw = binw
   
   psth_ft =      psth500k; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
-	psth_mr =      sum( reshape(psth500k, binw,            length(psth500k) / binw ));
+	psth_mr =      sum( reshape(psth500k, mr_binw,            length(psth500k) / mr_binw ));
   
   ps_mr_size = size(psth_mr)
 	
