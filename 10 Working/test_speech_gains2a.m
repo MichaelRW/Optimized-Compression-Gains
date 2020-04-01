@@ -25,22 +25,48 @@ pkg load signal  % For Octave
 
 
 collector_mr = gain_simulation( 'SA1', 45, [-40:20:40], 2, 'NAL-R', 5, 'Mixed', 100e-6, 'healthy' )
-%collector = gain_simulation(    'SA1', 45, [-40:20:40], 2, 'NAL-R', 5, 'Mixed', 10e-6,  'healthy' )
 % Usage:q
 
 
     directoryname = 'Sentence_Simulations';    
 
-         mkdir(directoryname)
+mkdir(directoryname)
 save_name = ['Sentence_Simulations' '_spl_' num2str(45) '_adj_' num2str(-40) '_' ...         
 num2str(40) '_loss_' num2str(2) '_pres_' 'NAL-R' '_CFcount_' ...
 num2str(5) '_IOHCimp_' 'Mixed' '_binwidth_' ...
 num2str(100e-6*10e6)];
-         
+     load(save_name)    
  
 %     
     save('-mat7-binary', [ '.' filesep directoryname filesep save_name '.mat'], 'collector_mr');
         pause(10);  % 10 sec, pause is needed, because saving process takes some time
+        
+    figure('Name', 'AVG'); plot(collector_mr.spl_col,collector_mr.adj_col, 'x') 
+    ylim([-40,40])
+    
+##        collector = gain_simulation(    'SA1', 45, [-40:20:40], 2, 'NAL-R', 5, 'Mixed', 10e-6,  'healthy' )
+##
+##                 mkdir(directoryname)
+##save_name = ['Sentence_Simulations' '_spl_' num2str(45) '_adj_' num2str(-40) '_' ...         
+##num2str(40) '_loss_' num2str(2) '_pres_' 'NAL-R' '_CFcount_' ...
+##num2str(5) '_IOHCimp_' 'Mixed' '_binwidth_' ...
+##num2str(10e-6*10e6)];
+##        
+##        
+##        
+##        
+##
+##
+##
+##figure('Name', 'FT'); plot(collector.spl_col,collector.adj_col)       
+##        
+##        
+        
+        
+        
+        
+        
+        
         
 
 % gain_simulation( data_file, spl, adj, loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy )

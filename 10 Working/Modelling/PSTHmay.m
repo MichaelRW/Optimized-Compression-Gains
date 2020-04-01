@@ -322,13 +322,13 @@ for i = 1:length(psth_freq)
 
     if strcmp(type, 'FINE')==1
       pr = neurogram_ft;
-      figure; plot(t_ft,pr, '-o')
+##      figure; plot(t_ft,pr, '-o')
       
       % ... = t_ft
     elseif strcmp(type, 'AVG')==1
       t_mr = 0:windur_mr/2*(1/fs):( length(neurogram_mr) - 1 ) * windur_mr/2 * (1/fs);
       pr = neurogram_mr;
-figure; hold on; plot(t_mr,pr, '-o')
+##figure; hold on; plot(t_mr,pr, '-o')
       xlabel('bin')
       ylabel('average spike count')
       hold off;

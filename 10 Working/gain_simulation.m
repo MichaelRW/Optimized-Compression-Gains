@@ -30,7 +30,7 @@ function [ collector ] = gain_simulation( data_file, spl, adj, loss, pres, CFcou
 [ data, FS ]= readsph( [data_file '.WAV'] );
     data = set_spl( data(:)', spl );
     %
-    figure; plot(data); grid on; xlim([1 length(data)]); title( sprintf('TIMIT Sentence %s', data_file) );
+    %figure; plot(data); grid on; xlim([1 length(data)]); title( sprintf('TIMIT Sentence %s', data_file) );
 
 [ start, stop, ~ ] = textread( [data_file '.PHN'],'%f%f%s' );
     start = start + 1;
@@ -62,7 +62,7 @@ for l = 2: 1 :  length(start)
     
     pre_sentence = [ sentence adj_spl(next_phone, 0) ];  % Append phonemes with every loop interation with no SPL adjustment.
         %
-        figure; plot(pre_sentence); grid on; axis( [1 length(data) -0.03 0.03] ); title(sprintf('Phoneme %d', l - 1)); shg;
+        %figure; plot(pre_sentence); grid on; axis( [1 length(data) -0.03 0.03] ); title(sprintf('Phoneme %d', l - 1)); shg;
     
     psth_normal = make_psth_struct( pre_sentence, FS,  get_spl( pre_sentence ), ...
         1, 'none', CFcount, IOHC_loss, binwidth, 'healthy' );
