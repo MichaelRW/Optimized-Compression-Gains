@@ -4,7 +4,7 @@ function [ window ] = get_window( start, stop, FS, psth_time, psth_freq, startIn
 % window start = phoneme start in s
  window_start = start/FS;%+(5e-3);
 %window_start = ( start - startIndices(phonemeReferenceIndex) + 1 ) / FS + 5e-3;
-
+    psth_time = psth_time + window_start;
  start_index = find( abs( (psth_time(1, :) - window_start) ) < 1e-4, 1 )
 
  window_end = stop/FS%+(5e-3);

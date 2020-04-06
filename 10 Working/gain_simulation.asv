@@ -155,13 +155,11 @@ for control_phoneme = 2: 1 : 5   %(length(start)-1)
     
     % Appends the optimal gain adjustment of this phoneme.
     
-    % collector.adj_col contains the adjustment steps for the different
-    % phonemes, at which the error between normal and impaired psth were
-    % minimal, size [1 x length(start)]
+    % collector.adj_col contains the adjustment step for the current
+    % phoneme, at which the error between normal and impaired psth were
+    % minimal
     collector.adj_col = [  collector.adj_col  error_m.psth_opti  ];
-    % collector.spl_col contains the sound pressure level of the different 
-    % phonemes
-    
+    % collector.spl_col c
     collector.spl_col = [  collector.spl_col  get_spl(data_next_phone)  ];
     collector.psth_err = [  collector.psth_err  error_m.psth  ];
     

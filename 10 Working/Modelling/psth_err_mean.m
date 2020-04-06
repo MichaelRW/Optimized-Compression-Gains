@@ -51,6 +51,8 @@ if ( strcmp(psth_struct1.type, 'FINE') && strcmp(psth_struct2.type, 'FINE') )
     % mean absolute error of the two psth,
     error.psth = [error.psth mean(abs(p1w(:) - p2w(:)))];
     
+    % %% ?????????????????????????????????????????????????????????
+    % find_mxmn does the following ....
     [ error.psth_opti, error.SPL_uniq ] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
     
     %=====================================================================%
@@ -85,7 +87,7 @@ elseif strcmp(psth_struct1.type, 'AVG') && strcmp(psth_struct2.type, 'AVG')
     %=====================================================================%
     %                           PR, PH, and BOX                           %
     %=====================================================================%
-    
+    % % what is hist?
     if strncmpi(psth_struct1.calc_details, 'detailed', 6)
         error.hist = [error.hist mean(abs(psth_struct1.hist(:) - psth_struct2.hist(:)))];
         [ error.hist_opti, error.SPL_uniq ] = find_mxmn( error.SPL, error.hist, error.ADJ, 'min' );

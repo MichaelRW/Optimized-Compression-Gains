@@ -14,8 +14,8 @@ function [ data_struct_new ] = ampl_pres( data_struct, audi_struct, pres_type, c
 % See Also make_data_struct
 
 
-if strcmp(audi_struct.type, 'Normal')
-    disp('Warning: You are appling amplification gains to a normal AP.');
+if strcmp(audi_struct.type, 'Normal')&& ~ strcmp(pres_type,'none')
+    disp('Warning: You are applying amplification gains to a normal AP.');
 end
 
 %%
