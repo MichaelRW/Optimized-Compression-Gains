@@ -26,3 +26,4 @@ for i = 1:max(n)
     % minimal/maximal 
     out = [out look_up(posv(pos2))'];
 end
+tttt=1
