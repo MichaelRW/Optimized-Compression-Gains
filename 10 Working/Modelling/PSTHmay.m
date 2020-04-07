@@ -215,7 +215,7 @@ for control_freq = 1:length(psth_freq)
     psth_all_fibers(control_freq,:) = psth_LSR + psth_MSR + psth_HSR;  % Complete PSTH response.
 
     
-    psth_ft(control_freq,:) =      psth_all_fibers; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
+    psth_ft =      psth_all_fibers; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
     psth_mr(control_freq,:) =      sum( reshape(psth_all_fibers(control_freq,:), number_samples_in_bin,            length(psth_all_fibers(control_freq,:)) / number_samples_in_bin ));
     
    % pre-allocate neurogram
