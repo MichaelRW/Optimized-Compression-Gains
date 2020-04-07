@@ -1,8 +1,27 @@
-
 function [ data_struct ] = make_data_struct( varargin )
+% function to make data_struct, set spl of data and apply amplification gain to data, 
+% struct carries the data vector and important %additional information 
+% on the data vector in the fields:
+% 
+% data: data with size [1 x length(data)], data is usually pre-sentence
+% FS
+% SPL: data is set to input spl with function set_spl() in this function,
+%      then the input sp is saved in this field
+% SYNAPTOPATHY: synaptopathy type (e.g.'healthy', or 'IHCproportional')
+% F
+% PHASE: calculated with quickfft() inside this function
+% calc_details: 'detailed' or 'simple'
 
-% make_data_struct(data, FS, spl)
-% make_data_struct(data, FS, spl, audiogram_struct, 'prescription_type')
+% used functions:
+%     ampl_pres()
+%     set_spl()
+
+
+% Example:
+%      make_data_struct(data, FS, spl)
+%      make_data_struct(data, FS, spl, audiogram_struct, 'prescription_type')
+%      make_data_struct(data, FS, spl, audiogram_struct,  pres, ...
+%      'detailed', synaptopathy); 
 
 
 if length(varargin) < 2

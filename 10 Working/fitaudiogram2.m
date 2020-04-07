@@ -40,7 +40,9 @@ function [Cohc,Cihc,OHC_Loss]=fitaudiogram2(FREQUENCIES,dBLoss,species,Dsd_OHC_L
 %      (see Plack et al., JASA 2004).
 %
 % © M. S. A. Zilany and I. C. Bruce (ibruce@ieee.org), 2013
+% commenting edited by H.Heinermann (2020)
 
+ttt=nan;
 switch species
     case 1
         disp('Analyzing audiogram for cat AN model')
@@ -55,33 +57,44 @@ switch species
         error(['Species # ' int2str(species) ' not known'])
 end
         
-% Variables are
+% Variables (loaded from .mat-Files) are
 % CF: 125 Hz to 10 kHz                   [1*37]
 % CIHC: varies from 1.0 to 0.0001        [1*55]
 % COHC: varies from 1.0 to 0             [1*56]
 % THR : absolute thresholds              [37*55*56]
 
+% compute shift between thr and Cohc and Cihc = 1 (fully functional system) 
 for k = 1:length(THR(:,1,1))
     dBShift(k,:,:)= THR(k,:,:) - THR(k,1,1);
 end
 
+% if no input of ratio of IHC and OHc loss, then define as 2/3*dBLoss
 if nargin<4, Dsd_OHC_Loss = 2/3*dBLoss;
 end;
-
+ttt=nan; 
 for m = 1:length(FREQUENCIES)
+    % determine which frequency in loaded frequency vector is
+    % closest to input frequency and read out index, use index to 
+    % call from dBShift throughout the loop run.
     [W,N] = min(abs(CF-FREQUENCIES(m))); n = N(1);
     
+    % dBShift(n,1,end) is the largest shift, that can be achieved 
+    % by recuding Cohc  
     if Dsd_OHC_Loss(m)>dBShift(n,1,end)
         Cohc(m) = 0;
     else
+        % find value at which the loaded thr-shift is closest to the
+        % input thr shift and read out the respective Cohc value. 
         [a,idx]=sort(abs(squeeze(dBShift(n,1,:))-Dsd_OHC_Loss(m)));
         Cohc(m)=COHC(idx(1));
     end
     OHC_Loss(m) = interp1(COHC,squeeze(dBShift(n,1,:)),Cohc(m),'nearest');
     [mag,ind] = sort(abs(COHC-Cohc(m)));
     
-    Loss_IHC(m) = dBLoss(m)-OHC_Loss(m);
+    %Loss_IHC(m) = dBLoss(m)-OHC_Loss(m);
     
+    % dBShift(n,end,ind(1)) is the largest thr shift that can be achieved 
+    % by reducing Cihc, at the before specified Cohc 
     if dBLoss(m)>dBShift(n,end,ind(1))
         Cihc(m) = 0;
     else

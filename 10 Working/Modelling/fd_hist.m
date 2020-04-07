@@ -1,7 +1,7 @@
 function [ bins, psth_hist ] = fd_hist( psth_struct, varargin )
 % FD_HIST computes the count distribution of rates in the neurogram.
 % [ bins, histogram ] = fd_hist( Neurogram_Struct, varargin )
-
+TTTT=nan;
 if ~strcmp(psth_struct.type, 'AVG')
     bins = [];
     psth_hist = [];
@@ -12,10 +12,12 @@ fibre = size(psth_struct.psth,1);
 psth_hist = [];
 
 for i = 1:fibre
-    [a bins] = hist(psth_struct.psth(i,:), 0:5:400);
+    [a, bins] = hist(psth_struct.psth(i,:), 0:5:400);
     psth_hist(i,:) = smooth_Octave(a);
+    %psth_hist_mat(i,:) = smooth(a);
+  
 end
-
+ ttt=nan;
 if (nargout == 0) | strncmpi(varargin,'y',1)
 %     figure;
 %     imagesc(bins, psth_struct.psth_freq, psth_hist); axis xy

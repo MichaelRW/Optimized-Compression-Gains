@@ -1,5 +1,5 @@
 
-function [ window ] = get_window( start, stop, FS, psth_time, psth_freq, startIndices, stopIndices, phonemeReferenceIndex )
+function [ window ] = get_window( start, stop, FS, psth_time, psth_freq)
 
 % window start = phoneme start in s
  window_start = start/FS;%+(5e-3);

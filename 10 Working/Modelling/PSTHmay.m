@@ -1,7 +1,7 @@
 function [ psth_struct ] = PSTHmay( S, aud, binwidth, varargin )
 %PSTHmay Computes the AN Neurogram.
 %
-% [ Neurogram_Strucutre ] =
+% [ Neurogram_Structure ] =
 % PSTHmay(data_structure, audi_structure, binwidth, plot)
 %
 % This function computes the Neurogram at 'binwidth' resolution using the
@@ -96,7 +96,7 @@ end
 Cohc = aud.Cohc;  Cihc = aud.Cihc;
 
 % number of repetitions for each fiber type (LSR,MSR,HSR) for healthy system
-number_rep_healthy = round( 50*[0.6 0.2 0.2] );
+number_rep_healthy = round( 50*[0.2 0.2 0.6] );
 
 
 
@@ -152,10 +152,6 @@ smw_mr = hamming(windur_mr);
 vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, dt, simdur, Cohc(1), Cihc(1), 2 );
 
 % pre-allocate psth matrices, size: [number of fibers x length of IHC response]
-% psth500k_a_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
-% psth500k_b_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
-% psth500k_c_single_fibers = NaN( length(psth_freq), length(vihc_temp) );
-
 psth_LSR_single_fibers = NaN( length(nrep(1)), length(vihc_temp) );
 psth_MSR_single_fibers = NaN( length(nrep(2)), length(vihc_temp) );
 psth_HSR_single_fibers = NaN( length(nrep(3)), length(vihc_temp) );
@@ -188,11 +184,6 @@ for control_freq = 1:length(psth_freq)
     % sum up psth of all LSR fibers for this control frequency
     psth_LSR = sum(psth_LSR_single_fibers,1);
     
-    
-    %%%%%% warum eigentlich fibers getrennt?
-    % achso, damit man die anteile im falle einer synaptopathy????
-    % überdenken!!
-    
     % Accumulate synapse responses for medium spontaneous fibers.
     %     fprintf( 1, '\n\t\tComputing medium spont. fiber responses.' );
     %
@@ -222,22 +213,9 @@ for control_freq = 1:length(psth_freq)
     
     % sum up psth of all fiber types and save for this control frequency
     psth_all_fibers(control_freq,:) = psth_LSR + psth_MSR + psth_HSR;  % Complete PSTH response.
-    
-    
-    % % % %     %pr = sum( reshape(psth500k, binw, len), 1 ) / sum(nrep) / binwidth; % psth in units of spikes/s/fiber
-    % % % %     %psth_sec = sum( psth500k, 1 ) / sum(nrep) * fs;
-    % % %
-    % % %     %% l_sec = length(psth_sec)
-    % % %     %figure; plot(psth_sec)
-    
-    
-%     ft_binw = round(10e-6*fs);
-%     mr_binw = number_samples_in_bin;
-%     
-
 
     
-    psth_ft =      psth_all_fibers; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
+    psth_ft(control_freq,:) =      psth_all_fibers; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
     psth_mr(control_freq,:) =      sum( reshape(psth_all_fibers(control_freq,:), number_samples_in_bin,            length(psth_all_fibers(control_freq,:)) / number_samples_in_bin ));
     
    % pre-allocate neurogram
@@ -387,7 +365,8 @@ if ( strncmpi(data_orig.calc_details, 'detailed', 6) )
         %psth_struct.boxp_mnmx = [min(psth_struct.boxp(:)) max(psth_struct.boxp(:))];
         
     elseif strcmp(psth_struct.type, 'AVG')
-        
+        % histogram over rate bins is computed here, but is only used as
+        % additional information and not for neurogram comparison
         disp('Calculating the Histogram Response')
         [ psth_struct.hist_bins, psth_struct.hist ] = fd_hist( psth_struct );
         psth_struct.hist_mnmx = [min(psth_struct.hist(:)) max(psth_struct.hist(:))];
@@ -402,11 +381,10 @@ if ( strncmpi(data_orig.calc_details, 'detailed', 6) )
 else
     psth_struct.calc_details = 'simple';
 end
-
+ttt=nan
 
 
 %% Is a Whole Number?
-
 function [ flag ] = iswhole( number )
 flag = (number == round(number));
 

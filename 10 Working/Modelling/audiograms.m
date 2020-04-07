@@ -1,7 +1,7 @@
 function audiogram = audiograms(num, CF_Points, varargin)
 %AUDIOGRAMS returns a sample audiogram profile.
 % 
-% Audiogram_Strucutre = audiograms(LookUpNumber, CF_Points) uses a 15 row
+% Audiogram_Structure = audiograms(LookUpNumber, CF_Points) uses a 15 row
 % look-up take to return a sample audiogram. LookUpNumber number 1 contains
 % a normal audiogram profile with an overall zero dB loss. Each audiogram
 % profile contains at least 10 logarithmically spaced hearing losses. The
@@ -13,6 +13,8 @@ function audiogram = audiograms(num, CF_Points, varargin)
 % Desired Sensation Level Multistage Input/Output Algorithm. Trends Amplif.
 % 2005;9(4):159-97.
 
+% look-up table containing HL values in dB for frequencies specified in F
+% later in the code, F = [250 500 750 1000 1500 2000 3000 4000 6000 8000];
 AG = [[ 0  0  0  0  0  0  0  0  0  0];...
        [20 20 25 30 40 45 50 50 50 50];...
        [25 30 45 55 65 80 85 90 90 90];...  
@@ -30,8 +32,6 @@ AG = [[ 0  0  0  0  0  0  0  0  0  0];...
        [80 85 90 95 100 110 110 110 110 110]];
 
 type = {'Normal', 'Mild', 'Moderate', 'Mild', 'Mild', 'Moderate', 'Moderate', 'Moderate', 'Moderate', 'Moderate', 'Moderate', 'Moderate', 'Severe', 'Severe', 'Profound',};
-
-%type = {'Normal','Mild'};
 if num < 1
     num = 1;
 end
@@ -44,6 +44,7 @@ end
 t = type{num};
 F = [250 500 750 1000 1500 2000 3000 4000 6000 8000];
 
+%% interpolation of HL values for longer input frequency vector
 if exist('CF_Points') && ( CF_Points > 10 )
     FREQS = logspace( log10( F(1) ), log10( F(end) ), CF_Points );
     H = interp1(F,AG(num,:),FREQS,'pchip'); % 'linear' causes problems!
@@ -57,14 +58,19 @@ if ~isempty(varargin)
 else
     IOHC_loss = 'Mixed';
 end
-    
+
+%% use of function fitaudiogram2() to allocate Cohc/Cihc factors to the 
+%% respectively chosen audiogram considering the IOHC-loss input paramter 
+%% OHCL (only OHC impairment), IHCL (only IHC impairment), Mixed 
 if strncmpi(IOHC_loss, 'OHCL', 4)
+    %           fitaudiogram2(freqs,dBLoss, species,...)
     [Cohc,Cihc]=fitaudiogram2(FREQS,H,2);
     disp('Impairment due to Outer Hair Cell Loss');
 elseif strncmpi(IOHC_loss, 'IHCL', 4)
     [Cohc,Cihc]=fitaudiogram2(FREQS,H,2);
     disp('Impairment due to Inner Hair Cell Loss');
 else
+    % note: if 'Normal' audiogram, CIHC and COHC equal 1;
     IOHC_loss = 'Mixed';
     [Cohc,Cihc]=fitaudiogram2(FREQS,H,2);
     disp('Mixed Inner & Outer Hair Cell Loss');
@@ -81,6 +87,7 @@ audiogram.orig_H = AG(num,:);
 audiogram.IOHC_loss = IOHC_loss;
 
 %%
+
 if nargout == 0
     F = floor(log2(F/125)/0.5)/2 + 1;
 %     figure;
