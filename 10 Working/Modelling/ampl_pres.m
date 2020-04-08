@@ -1,15 +1,14 @@
-
 function [ data_struct_new ] = ampl_pres( data_struct, audi_struct, pres_type, calc_details )
 % AMPL_PRES applies either NAL-R or DSL amplification prescriptions
 % 
 % [ data_struct_out ] = ampl_pres( data_struct_in, audi_struct, pres_type )
 % uses the 'audiograms' data structure to apply appropriate NAL-R or DSL
 % hearing aid prescription gains to the data in data_struct_in.
-% Amplificiation prescription is specified by setting 'pres_type' as either
+% Amplification prescription is specified by setting 'pres_type' as either
 % 'NAL' or 'DSL'. The resulting data is contained in the structure
 % data_struct_out along with the original data.
 %
-% See Also make_data_struct
+% See also make_data_struct
 
 
 if strcmp(audi_struct.type, 'Normal')&& ~ strcmp(pres_type,'none')
@@ -45,11 +44,16 @@ Z = [[0  3  5  7  9  12 14 17 20 22 25 29 32 36 39 43 47 51 55 59 62 66 68]'...
      [14 17 19 21 24 27 29 32 35 38 41 45 48 51 55 58 62 65 69 73 76 80 84]'...
      [8  11 14 17 20 23 26 29 32 36 39 43 46 50 54 58 61 65 69 73 76 81 85]'...
      [6  10 13 16 19 22 25 27 30 35 38 42 45 49 53 58 60 64 68 72 75 80 85]'];
-
+    
+    % create vector with those amplification gains values (dB) for the
+    % input frequencies (audi_struct.F) and the corresponding hearing loss
+    % (audi_struct.H), 
     REAG_dB = interp2(F,H,Z,audi_struct.F,audi_struct.H, 'cubic');
     REAG_SC = 10.^(REAG_dB/20);
 
     % PLOTTING %
+%     %figure; plot(audi_struct.H)
+%     %hold on;
 %     plot(audi_struct.F, REAG_dB)
 %     title('DSL Real Ear Unadided Amplification Gains')
 %     xlabel('Center Frequency (CF)')
@@ -58,6 +62,7 @@ Z = [[0  3  5  7  9  12 14 17 20 22 25 29 32 36 39 43 47 51 55 59 62 66 68]'...
 
     % NO NEED TO APPLY THE HEAD RELATED TRANSFER FUNCTION %
     data = data_struct.data;
+    % find gain factors for symmetric spectrum, will be applied in l. 123
     gains = fftshift(interp1([0 audi_struct.F],[1 REAG_SC],abs(f),'cubic'));
     %=====================================================================%
     
@@ -115,6 +120,7 @@ for i = 1:size(data,1)
         x = data(i,:).*hanning(window)';
     end
     x = [x zeros(1,zero_padding)];
+    % apply gains in freq domain, afterwards inverse fft
     X = fft(x).*gains;
     x = ifft(X);
     data(i,:) = x(1:window);

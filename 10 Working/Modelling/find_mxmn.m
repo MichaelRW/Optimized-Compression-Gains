@@ -1,5 +1,22 @@
 function [ out, b ] = find_mxmn( key, values, look_up, mxmn )
-% example
+% function to find ADJ, respective djustment step, at which the element of
+% look_up, the smallest/largest (defined through mxmn) element of values 
+% occurs
+% 
+% Input Arguments:
+%                   key: orginal SPL values
+%                   values: values, which should be minimized (usually 
+%                           error metrics)
+%                   look_up: parameters of the error metrics, which should
+%                            be optimized (usually the ADJor adjustment 
+%                            steps)
+% Output Arguments: 
+%                   error.psth_opti: element of look_up, at which values is
+%                                    smallest (usually ADJ, adjustment step,
+%                                    at which psth-error is smallest)
+%                   error.SPL_uniq: SPL vector without redundant elements
+%
+% Example: 
 % [error.psth_opti error.SPL_uniq] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
 
 % comments adjusted to example
@@ -9,16 +26,16 @@ function [ out, b ] = find_mxmn( key, values, look_up, mxmn )
 
 % find unique values in the original SPL of all phonemes and the indices 
 [b, m, n] = unique(key);
-
+ttt=nan;
 out = [];
-% go through 1 till maximum of unique indices % number of unique elements
+% go through all SPL values that are unique
 for i = 1:max(n)
-    % posv are the indices in original SPL, where values of the unique are the same 
     posv = find(key == b(i));
     if strcmp(mxmn, 'max')
+        % find maximum of values ( usually psth difference) for this SPL 
         [val pos2] = max(values(:,posv), [], 2);
     elseif strcmp(mxmn, 'min')
-        % find minimum of psth difference for this SPL 
+        % find minimum of values ( usually psth difference) for this SPL 
         [val pos2] = min(values(:,posv), [], 2);
     end
     
