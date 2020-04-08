@@ -40,9 +40,9 @@ function [Cohc,Cihc,OHC_Loss]=fitaudiogram2(FREQUENCIES,dBLoss,species,Dsd_OHC_L
 %      (see Plack et al., JASA 2004).
 %
 % © M. S. A. Zilany and I. C. Bruce (ibruce@ieee.org), 2013
-% commenting edited by H.Heinermann (2020)
+% commenting edited by H.Heinermann (2020), helen@heinermann.net
 
-ttt=nan;
+
 switch species
     case 1
         disp('Analyzing audiogram for cat AN model')
@@ -71,7 +71,7 @@ end
 % if no input of ratio of IHC and OHc loss, then define as 2/3*dBLoss
 if nargin<4, Dsd_OHC_Loss = 2/3*dBLoss;
 end;
-ttt=nan; 
+
 for m = 1:length(FREQUENCIES)
     % determine which frequency in loaded frequency vector is
     % closest to input frequency and read out index, use index to 

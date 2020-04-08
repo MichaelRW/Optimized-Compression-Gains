@@ -22,8 +22,10 @@ function [ data_struct ] = make_data_struct( varargin )
 %      make_data_struct(data, FS, spl, audiogram_struct, 'prescription_type')
 %      make_data_struct(data, FS, spl, audiogram_struct,  pres, ...
 %      'detailed', synaptopathy); 
-
-
+%--------------------------------------------------------------------------
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 if length(varargin) < 2
     disp('Error, not enough inputs');
     data_struct = struct([]);

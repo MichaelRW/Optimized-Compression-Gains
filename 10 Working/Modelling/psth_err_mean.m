@@ -156,7 +156,7 @@ elseif strcmp(psth_struct1.type, 'AVG') && strcmp(psth_struct2.type, 'AVG')
     % finding the ADJ, at which psth error is minimal
     [ error.psth_opti, error.SPL_uniq ] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
     
-    TTTT=nan;
+    
     
     %=====================================================================%
     % appending newly added SPL
@@ -165,5 +165,5 @@ elseif strcmp(psth_struct1.type, 'AVG') && strcmp(psth_struct2.type, 'AVG')
 else
     disp('Unknown Structure Type');
 end
-tttt=nan;
+
 

@@ -33,7 +33,11 @@ function [ collector ] = gain_simulation( data_file, spl, adj, loss, pres, CFcou
 
 % collector = gain_simulation( 'SA1',     60, [-40 40], 5,  'NAL-R', 40,...
 % 'Mixed',   10e-6,    'healthy');
-
+%--------------------------------------------------------------------------
+% Version 0: Faheem Dinath. June 7th 2008.
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 %% Generate MAT Filename
 
 % save_name = [data_file '_spl_' num2str(spl) '_adj_' num2str(adj(1)) '_' ...
@@ -61,7 +65,7 @@ data = set_spl( data(:)', spl );
 start = start + 1;
 
 % this is the variable, that will contain the phonemes with their optimal
-% gain (see line xxxx for comparison)
+% gain (see line 165 for comparison)
 sentence = [];
 
 % make struct to later save parameters and results
@@ -74,10 +78,10 @@ collector = struct('data_file',data_file,'spl',spl,'adj',adj,'loss',loss,...
 % sentence part consisting of all prior phonemes (attenuated with their optimal 
 % gain respectively) and the newly added phoneme of this loop iteration 
 % (controlled by control_phoneme). The newly added phoneme is tested with
-% all adjustment steps from vetor adj (see loop in line xxx)
+% all adjustment steps from vetor adj (see loop starting in line 130)
 
 % for control_phoneme = 2:1:( length(start) - 1 )
-for control_phoneme = 4%2: 1 : 5   %(length(start)-1)
+for control_phoneme = 2: 1 : (length(start)-1)
     
     disp( ['Phoneme Number: ' num2str(control_phoneme) - 1] );
     
@@ -153,7 +157,7 @@ for control_phoneme = 4%2: 1 : 5   %(length(start)-1)
         % psth error in field psth_opti.
         error_m = psth_err_mean( psth_normal, psth_impair, window, error_m, adj(control_adj) );
         
-        tttt=1;
+        
     end
     
     % Appends the currently analyzed phoneme with the computed optimal gain
@@ -185,5 +189,3 @@ for control_phoneme = 4%2: 1 : 5   %(length(start)-1)
     %         pause(10);  % 10 sec, pause is needed, because saving process takes some time
     
 end
-tttt=nan;
-

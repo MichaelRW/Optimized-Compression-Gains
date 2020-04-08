@@ -13,6 +13,10 @@ function audiogram = audiograms(num, CF_Points, varargin)
 % Desired Sensation Level Multistage Input/Output Algorithm. Trends Amplif.
 % 2005;9(4):159-97.
 
+%--------------------------------------------------------------------------
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 % look-up table containing HL values in dB for frequencies specified in F
 % later in the code, F = [250 500 750 1000 1500 2000 3000 4000 6000 8000];
 AG = [[ 0  0  0  0  0  0  0  0  0  0];...

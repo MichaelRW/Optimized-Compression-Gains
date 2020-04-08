@@ -18,7 +18,10 @@ function [ out, b ] = find_mxmn( key, values, look_up, mxmn )
 %
 % Example: 
 % [error.psth_opti error.SPL_uniq] = find_mxmn( error.SPL, error.psth, error.ADJ, 'min' );
-
+%--------------------------------------------------------------------------
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 % comments adjusted to example
 
 % [C,ia,ic] = unique() also returns index vectors ia and ic using any of the previous syntaxes.
@@ -26,7 +29,7 @@ function [ out, b ] = find_mxmn( key, values, look_up, mxmn )
 
 % find unique values in the original SPL of all phonemes and the indices 
 [b, m, n] = unique(key);
-ttt=nan;
+
 out = [];
 % go through all SPL values that are unique
 for i = 1:max(n)
@@ -43,4 +46,3 @@ for i = 1:max(n)
     % minimal/maximal 
     out = [out look_up(posv(pos2))'];
 end
-tttt=1

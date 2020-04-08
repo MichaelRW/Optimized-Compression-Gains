@@ -1,25 +1,67 @@
 function [ psth_struct ] = PSTHmay( S, aud, binwidth, varargin )
-%PSTHmay Computes the AN Neurogram.
+% PSTHmay Computes the AN Neurogram.
 %
 % [ Neurogram_Structure ] =
 % PSTHmay(data_structure, audi_structure, binwidth, plot)
 %
 % This function computes the Neurogram at 'binwidth' resolution using the
 % spike timing information from the Zilany-Bruce Cat Auditory Model. The AN
-% response is taken at 'CF_Points' different center frequency locations,
+% response is taken at 'CF_Points', different center frequency locations,
 % spaced logarithmically along the basilar membrane. At each CF point, the
 % function calculates the summed response of 50 nerve fibers organized as
-% 60%, high, 20% medium, and 20% low spontaneous rate fibers. The Audiogram
+% 60% high, 20% medium, and 20% low spontaneous rate fibers. The Audiogram
 % structure specifies the hearing loss profile, as +dB loss, at specific
 % frequencies. In addition to calculating the Neurogram, phase response,
 % power ratio, box plots, and histogram analysis are calculated where
 % possible. An optional potting parameter, if 'y' plots the Neurogram.
 %
-% See Also make_data_struct, audiograms, fd_phsr, fd_boxp, fd_hist,
-% psth_plot.
+% Input Parameters:
+% S:                input data structure
+% aud:              audiogram structure
+% binwidth:         specified binwidth (see binwidth below/output parameter)
+%
+% Output Parameters: psth_struct with fields:               
+% type:             either 'FINE' or 'AVG', depending on the input binwidth
+%                   'FINE' fine-timing neurogram, binwidth = 10e-6 [sec]
+%                   'AVG' mean-rate-neurogram, binwidth = 100e-6 [sec]
+% psth_time:        time vector of the psth
+% psth:             output psth size
+% psth_freq:        CFs of the used fibers
+% psth_mnmx:        minimum and maximum value of computed psth size [1 x 2]
+% binwidth:         binwidth used to compute the psth
+%                   function, fine-time: 10e-6 [sec], mean-rate: 100e-6
+%                   [sec]
+% data_orig:        unamplified original data
+% audiogram_struct: identical with input audigram struct 'aud'
+% F:                frequency axis to phase and magnitude spectrum,
+%                   provided by quickfft()
+% PSTH:             magnitude spectrum of psth computed with quickfft() 
+% PHASE:            phase spectrum computed from psth with quickfft()
+% calc_details:     from input, options: 'simple' and 'detailed', if
+%                   'detailed', then additional information is infered 
+%                   from the psth (psth_norm for 'FINE' and hist for 'AVG') 
+% hist_bins:        output of fd_hist(), bins of the rate histogram
+%                   size [1 x number of histogram bins]
+% hist:             output of fd_hist(), rate histogram computed from 
+%                   average discharge rate neurogram,
+%                   size [length(psth_freq)x number of histogram bins]
+% hist_mnmx:        minimum and maximum value of average rate histogram 
+%                   (computed from average discharge neurogram)
+%                   [1 x 2]
 
-%disp('PSTHmay. Faheem Dinath. June 7th 2008.')
-
+% See Also 
+%           make_data_struct()
+%           audiograms()
+%           fd_phsr()
+%           fd_boxp()
+%           fd_hist()
+%           psth_plot()
+%
+%--------------------------------------------------------------------------
+% Version 0: Faheem Dinath. June 7th 2008.
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 %% Constants: Time-related
 % sampling frequency
 fs = 1e5;  % May change if FS is greater than fs %
@@ -27,8 +69,8 @@ fs = 1e5;  % May change if FS is greater than fs %
 % time step
 dt = 1/fs;
 
-% number of bins per second for psth, 10e-6 in case of FT and 100e-6 in case of AVG
-% neurogram
+% number of bins per second for psth, 10e-6 in case of FT and 100e-6 in 
+% case of AVG neurogram
 number_bins = double(single(1/binwidth));
 
 % How many samples are in each bin.
@@ -39,9 +81,6 @@ number_samples_in_bin = round(binwidth*fs);
 psth_freq = aud.F;
 
 %% Check for proper FS and Binwidth
-
-% if number of bins / sec >= in-function-sampling frequency
-% && inputdata-sampling frquency < number of bins / sec
 if ( number_bins >= fs) && (S.FS < number_bins )
     type = 'FINE';
     fs = number_bins;
@@ -76,9 +115,6 @@ else
     disp('Something is wrong with FS and binwidth.')
     return;
 end
-
-% data = make_data_struct( dat, fs, S.SPL, S.calc_details );  % FIXME?
-
 %% save copy of data input struct
 if  isfield(S, 'data_orig') % If there's been amplification.
     data_orig = S.data_orig;
@@ -87,23 +123,16 @@ if  isfield(S, 'data_orig') % If there's been amplification.
 else                        % Otherwise there hasn't been amplification.
     data_orig = S;
 end
-
-
-
 %% Impairment Parameters
-
 % vectors, size = 1 x number of CF
 Cohc = aud.Cohc;  Cihc = aud.Cihc;
 
 % number of repetitions for each fiber type (LSR,MSR,HSR) for healthy system
 number_rep_healthy = round( 50*[0.2 0.2 0.6] );
-
-
-
 %% Auditory nerve fiber population is generated or loaded
 if exist('ANpopulation.mat','file')
-    load('ANpopulation.mat');
-    %disp('Loading existing population of AN fibers saved in ANpopulation.mat')
+    load('ANpopulation.mat','sponts', 'tabss', 'trels');
+    disp('Loading existing population of AN fibers saved in ANpopulation.mat')
     if (size(sponts.LS,2)<number_rep_healthy(1))||(size(sponts.MS,2)<number_rep_healthy(2))||(size(sponts.HS,2)<number_rep_healthy(3))||(size(sponts.HS,1)<length(psth_freq)||~exist('tabss','var'))
         disp('Saved population of AN fibers in ANpopulation.mat is too small - generating a new population');
         [sponts,tabss,trels] = generateANpopulation(length(psth_freq),number_rep_healthy);
@@ -112,8 +141,6 @@ else
     [sponts,tabss,trels] = generateANpopulation(length(psth_freq),number_rep_healthy);
     disp('Generating population of AN fibers, saved in ANpopulation.mat')
 end
-
-
 %% synaptopathy conditions:
 % depending on the synaptopathy input string, the number of healthy LSR,
 % MSR and HSR - auditory nerve fibers is changed.
@@ -128,27 +155,21 @@ elseif strcmp(S.SYNAPTOPATHY, 'IHCproportional')
 else
     warning('synaptopathy type unknown, healthy AN assumed');
 end
-
-
 %% duration of simulated psth
 % define simulation duration to integer multiple of binwidth to avoid
 % additional samples for later reshaping
 simdur = ceil( T * 1.2 / binwidth) * binwidth;
-
-
 %% Filter properties
-% lines 52 to 56 from generate_neurogram_BEZ2018_octaveparallel
+% lines 52 to 56 from generate_neurogram_BEZ2018_octaveparallel()
 windur_ft = 32;  % Size of window for fine-timing neurogram.
 smw_ft = hamming(windur_ft);
-
+%
 windur_mr = 128;  % Size of window for mean-rate neurogram.
 smw_mr = hamming(windur_mr);
-
-
 %% Pre-allocation of LSR, MSR, HSR fiber psth, and psth of all fibers
 
-% just a template for pre-allocation in the following lines, size: [1x approx.
-% simdur*fs]
+% just a template for pre-allocation in the following lines
+% size: [1x approx.simdur*fs]
 vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, dt, simdur, Cohc(1), Cihc(1), 2 );
 
 % pre-allocate psth matrices, size: [number of fibers x length of IHC response]
@@ -158,7 +179,12 @@ psth_HSR_single_fibers = NaN( length(nrep(3)), length(vihc_temp) );
 
 psth_all_fibers = NaN( length(psth_freq), length(vihc_temp) );
 
-%figure; hold on
+psth_ft = NaN( length(psth_freq), length(vihc_temp) );
+psth_mr = NaN( length(psth_freq), length(vihc_temp)/number_samples_in_bin );
+
+neurogram_ft = NaN( length(psth_freq), length(vihc_temp) );
+neurogram_mr = NaN( length(psth_freq), length(vihc_temp)/number_samples_in_bin );
+% ----- loop over all CFs--------------------------------------------------
 for control_freq = 1:length(psth_freq)
     
     fprintf( 1, '\n\tCF: %d of %d - %d Hz', control_freq, numel(psth_freq), psth_freq(control_freq) );
@@ -215,7 +241,7 @@ for control_freq = 1:length(psth_freq)
     psth_all_fibers(control_freq,:) = psth_LSR + psth_MSR + psth_HSR;  % Complete PSTH response.
 
     
-    psth_ft =      psth_all_fibers; %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
+    psth_ft(control_freq,:) =      psth_all_fibers(control_freq,:); %round(10e-6*fs);%sum( reshape(psth500k, round(10e-6*fs), length(psth500k) / round(10e-6*fs) ));
     psth_mr(control_freq,:) =      sum( reshape(psth_all_fibers(control_freq,:), number_samples_in_bin,            length(psth_all_fibers(control_freq,:)) / number_samples_in_bin ));
     
    % pre-allocate neurogram
@@ -223,97 +249,31 @@ for control_freq = 1:length(psth_freq)
     neurogram_mr(control_freq,:) = zeros(1, size(vihc_temp, 2) / number_samples_in_bin);
     %figure; plot(psth_ft, 'x')
     
-    % filter psth with hamming window defined in ll. 
+    % filter psth with hamming window defined in ll. 164-168 
     neurogram_ft(control_freq,:) = neurogram_ft(control_freq,:) + filter( smw_ft', 1, psth_ft(control_freq,:));
     neurogram_mr(control_freq,:) = neurogram_mr(control_freq,:) + filter( smw_mr', 1, psth_mr(control_freq,:) );
     
-    %   figure; plot(neurogram_ft, 'x')
-    %
-    %   figure; plot(neurogram_mr, 'o')
-    
-    
-    
-    %neurogram_Sout = neurogram_Sout + synout;
-    
-    % make sure neurogram is a column vector
-    %  neurogram_ft = neurogram_ft';
-    %
-    %  neurogram_mr = neurogram_mr';
-    
-    
-    %figure; plot(neurogram_ft)
-    % (:, 1:windur_ft/2:end );
-    %figure; plot(t_ft,neurogram_ft)
-    
-    %t_ft = 0:(windur_ft/2/fs):( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;
-    
-    
-    %     neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
-    %     t_mr = 0:windur_mr/2*binwidth:( size(neurogram_mr, 2) - 1 ) * windur_mr/2 * binwidth;
-    %
-    %
-    %neurogram_ft = neurogram_ft(:, 1:windur_ft/2:end ); % this should be the overlap, I guess?????
-    %     t_ft = 0:windur_ft/2/fs:( size( neurogram_ft, 2 ) - 1 ) * windur_ft / 2 / fs;
-    
-    
-    %neurogram_mr = neurogram_mr(:, 1:windur_mr/2:end );
-    %     t_mr = 0:windur_mr/2*(binw):( length(neurogram_mr) - 1 ) * windur_mr/2 * (binw);
-    
-    %t_Sout = 0:1/Fs:( size(neurogram_Sout, 2) - 1 ) / Fs;
-    
-    
-    %    pr = filtfilt( B, A, pr );
-    % psth(control_freq, :) = single(pr);
-    
-    % 	fprintf(1, '\n');
-    
 end
 
+
+pr_ft = NaN(length(psth_freq), length(1:windur_ft/2:length(neurogram_ft)));
+pr_mr = NaN(length(psth_freq), length(1:windur_mr/2:length(neurogram_mr)));
+
+% resampling after filtering
 for control_freq = 1:length(psth_freq)
-    pr_ft(control_freq,:) = neurogram_ft(control_freq, 1:windur_ft/2:end );
-        
+    pr_ft(control_freq,:) = neurogram_ft(control_freq, 1:windur_ft/2:end );    
     pr_mr(control_freq,:) = neurogram_mr(control_freq, 1:windur_mr/2:end );
-    
 end
-
 
 t_ft = 0:windur_ft/2/fs:( size( pr_ft, 2 ) - 1 ) * windur_ft / 2 / fs;
 t_mr = 0:windur_mr/2*binwidth:( size( pr_mr, 2 ) - 1 ) * windur_mr / 2 *binwidth;
-
-
-%t_mr = 0:windur_mr/2*psthbinwidth_mr:( size(neurogram_mr, 2) - 1 ) * windur_mr/2 * psthbinwidth_mr;  
-
-%t_Sout = 0:1/fs:( size(neurogram_Sout, 2) - 1 ) / Fs; 
-
-
-
-%     if strcmp(type, 'FINE')==1
-%         pr = neurogram_ft;
-%         %      figure; plot(t_ft,pr, '-o')
-%
-%         % ... = t_ft
-%     elseif strcmp(type, 'AVG')==1
-%         %t_mr = 0:windur_mr/2*(1/fs):( length(neurogram_mr) - 1 ) * windur_mr/2 * (1/fs);
-%         pr = neurogram_mr;
-%         %figure; hold on; plot(t_mr,pr, '-o')
-%         xlabel('bin')
-%         ylabel('average spike count')
-%         hold off;
-%
-%     end
-
-
-
+%% saving everything in the output structure
 psth_struct.type = type;
-% control if dimension in size correct
-% think about the start value???
 
-% correct so that mr is also here.
 if strcmp(type, 'FINE')
     psth=pr_ft;
 fprintf(1, '\n\n');
 
-    
     psth_struct.psth_time = t_ft;%[0:(size(psth,2)-1)]*binwidth;
     
 elseif strcmp(type, 'AVG')
@@ -323,7 +283,6 @@ elseif strcmp(type, 'AVG')
     psth_struct.psth_time = t_mr;%[0:(size(psth,2)-1)]*binwidth;
 end
 
-
 psth_struct.psth = psth(:,1:size(psth,2));
 
 psth_struct.psth_freq = psth_freq;
@@ -332,14 +291,11 @@ psth_struct.binwidth = binwidth;
 % psth_struct.data_struct = data;  % FIXME
 psth_struct.data_orig = data_orig;
 
-
 if exist( 'data_pres' )
     psth_struct.data_pres = data_pres;
 end
 
 psth_struct.audiogram_struct = aud;
-
-
 
 %% PR, PH, BOX, HIST and Plots
 
@@ -373,17 +329,9 @@ if ( strncmpi(data_orig.calc_details, 'detailed', 6) )
         
     end
     
-    
-    if strncmpi(varargin{1},'y',1)
-        %psth_plot( psth_struct ); % check again
-    end
-    
 else
     psth_struct.calc_details = 'simple';
 end
-ttt=nan
-
-
 %% Is a Whole Number?
 function [ flag ] = iswhole( number )
 flag = (number == round(number));

@@ -1,6 +1,10 @@
 function [ bins, psth_hist ] = fd_hist( psth_struct, varargin )
 % FD_HIST computes the count distribution of rates in the neurogram.
 % [ bins, histogram ] = fd_hist( Neurogram_Struct, varargin )
+%--------------------------------------------------------------------------
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 if ~strcmp(psth_struct.type, 'AVG')
     bins = [];
     psth_hist = [];

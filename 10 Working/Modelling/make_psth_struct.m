@@ -7,7 +7,11 @@ function [ psth ] = make_psth_struct( data, FS, spl, loss, pres, CFcount, IOHC_l
 %
 % audiograms() creates struct audi and computes the cihc and cohc
 % corresponding to the audiogram features specified by the input type of hearing
-% loss (1-15), and the input IOHC_loss ('IHC only, OHC only, or Mixed')% 
+% loss (1-15), and the input IOHC_loss ('IHC only, OHC only, or Mixed')
+%--------------------------------------------------------------------------
+% Modifications and change to 2018 model version:
+%   H.T.Heinermann April 2020, helen@heinermann.net
+%--------------------------------------------------------------------------
 audi = audiograms( loss, CFcount, IOHC_loss );
 
 % Added synaptopathy (050718).
