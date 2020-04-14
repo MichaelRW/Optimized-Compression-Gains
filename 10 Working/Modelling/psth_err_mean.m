@@ -67,14 +67,14 @@ if ( strcmp(psth_struct1.type, 'FINE') && strcmp(psth_struct2.type, 'FINE') )
     % error.psth = [error.psth mean(abs(psth_struct1.psth(:) - psth_struct2.psth(:)))];
     
     % multiply with window, dim num(freq) x length(dat)
-    p1w = psth_struct1.psth.*window;
+    p1w = psth_struct1.psth;%.*window;
     
     %     MAX_Y_VALUE = 500;
     %        figure; ...
     %            subplot(2, 1, 1); plot( p1w(1, :) ); xlim( [1 length(psth_struct1.psth(1, :))] ); grid on; title( 'Normal PSTH' );
     %            subplot(2, 1, 2); plot( psth_struct1.psth(1, :)); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct1.psth(1, :)) -50 1e3] ); grid on;
     %
-    p2w = psth_struct2.psth.*window;
+    p2w = psth_struct2.psth;%.*window;
     %        figure; ...
     %            subplot(2, 1, 1); plot( p2w(1, :) ); xlim( [1 length(psth_struct2.psth(1, :))] ); grid on; title( sprintf('Impaired PSTH at %d dB Gain', varargin{2} ) );
     %            subplot(2, 1, 2); plot( psth_struct2.psth(1, :) ); hold on; plot(window(1, :).*MAX_Y_VALUE, 'r' ); axis( [1 length(psth_struct2.psth(1, :)) -50 1e3] ); grid on;
@@ -143,9 +143,9 @@ elseif strcmp(psth_struct1.type, 'AVG') && strcmp(psth_struct2.type, 'AVG')
     %=====================================================================%
     
     % windowing
-    p1w = psth_struct1.psth.*window;
+    p1w = psth_struct1.psth;%.*window;
     
-    p2w = psth_struct2.psth.*window;
+    p2w = psth_struct2.psth;%.*window;
     %         figure; plot(psth_struct1.psth(1, :)); hold on; plot(window(1, :), 'r'); grid on; title( 'Normal PSTH' );
     
     %         figure; plot(psth_struct2.psth(1, :)); hold on; plot(window(1, :), 'r'); grid on; title( 'Impaired PSTH' );

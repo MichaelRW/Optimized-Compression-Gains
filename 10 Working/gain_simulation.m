@@ -60,10 +60,6 @@ data = set_spl( data(:)', spl );
 % FS, also: keep textread against Matlab recommendation
 [ start, stop, ~ ] = textread( [data_file '.PHN'],'%f%f%s' );
 
-
-%%%%% question to Michael: why would one do this?
-start = start + 1;
-
 % this is the variable, that will contain the phonemes with their optimal
 % gain (see line 165 for comparison)
 sentence = [];

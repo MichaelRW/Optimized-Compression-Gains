@@ -1,9 +1,12 @@
 %% Environment
 close all;
-clear all; clc;
+%clear all; clc;
 set(0, 'DefaultFigureWindowStyle', 'docked');
 addpath( genpath(pwd), '-begin' );
-pkg load signal  % For Octave
+
+if(exist('OCTAVE_VERSION','builtin')~=0)
+    pkg load signal  % For Octave
+end
 %mexANmodel
 
 

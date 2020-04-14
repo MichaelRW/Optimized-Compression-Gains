@@ -173,9 +173,9 @@ smw_mr = hamming(windur_mr);
 vihc_temp = model_IHC_BEZ2018( dat, psth_freq(1), 1, dt, simdur, Cohc(1), Cihc(1), 2 );
 
 % pre-allocate psth matrices, size: [number of fibers x length of IHC response]
-psth_LSR_single_fibers = NaN( length(nrep(1)), length(vihc_temp) );
-psth_MSR_single_fibers = NaN( length(nrep(2)), length(vihc_temp) );
-psth_HSR_single_fibers = NaN( length(nrep(3)), length(vihc_temp) );
+psth_LSR_single_fibers = NaN( nrep(1), length(vihc_temp) );
+psth_MSR_single_fibers = NaN( nrep(2), length(vihc_temp) );
+psth_HSR_single_fibers = NaN( nrep(3), length(vihc_temp) );
 
 psth_all_fibers = NaN( length(psth_freq), length(vihc_temp) );
 
