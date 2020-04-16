@@ -48,6 +48,19 @@ Z = [[0  3  5  7  9  12 14 17 20 22 25 29 32 36 39 43 47 51 55 59 62 66 68]'...
     % create vector with those amplification gains values (dB) for the
     % input frequencies (audi_struct.F) and the corresponding hearing loss
     % (audi_struct.H), 
+    %REAG_dB = interp2(F,H,Z,audi_struct.F,audi_struct.H, 'spline');%'cubic');
+    
+    
+    
+    % Do not use interp2 with 'cubic'!!!
+    % reason:
+    %The problem is, that, different from Matlab,  in Octave, for the 'spline' 
+    %condition, the vectors need to be uniformly spaced. And it runs through
+    %the 'cubic' condition, but then NaNs ocurr. This is of course incorrect
+    %and also messes up the signal vector.  By this, also model_IHC_BEZ2018()
+    %receives the non-sense signal vector and crashes. 
+    %An as a result of the model function crashing, Octave crashes completely.
+
     REAG_dB = interp2(F,H,Z,audi_struct.F,audi_struct.H, 'cubic');
     REAG_SC = 10.^(REAG_dB/20);
 
@@ -123,6 +136,8 @@ for i = 1:size(data,1)
     % apply gains in freq domain, afterwards inverse fft
     X = fft(x).*gains;
     x = ifft(X);
+    % question to M.Wirtzfeld: maybe add this to avoid numerical problems?
+    %x = real(x);
     data(i,:) = x(1:window);
 end
 data = overlapandadd(data,window,shift);

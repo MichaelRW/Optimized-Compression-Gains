@@ -51,7 +51,8 @@ F = [250 500 750 1000 1500 2000 3000 4000 6000 8000];
 %% interpolation of HL values for longer input frequency vector
 if exist('CF_Points') && ( CF_Points > 10 )
     FREQS = logspace( log10( F(1) ), log10( F(end) ), CF_Points );
-    H = interp1(F,AG(num,:),FREQS,'pchip'); % 'linear' causes problems!
+    % 16.04. added 'extrap' to avoid nans for values outside the range/ at the edge of the range
+    H = interp1(F,AG(num,:),FREQS,'pchip', 'extrap'); % 'linear' causes problems!
 else
     FREQS = F;
     H = AG(num,:);

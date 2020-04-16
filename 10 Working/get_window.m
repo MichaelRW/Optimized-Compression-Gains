@@ -7,9 +7,9 @@ function [ window ] = get_window( start, stop, FS, psth_time, psth_freq)
     psth_time = psth_time + window_start;
  start_index = find( abs( (psth_time(1, :) - window_start) ) < 1e-4, 1 )
 
- window_end = stop/FS%+(5e-3);
+ window_end = stop/FS;%+(5e-3);
 %window_end = ( stop - startIndices(phonemeReferenceIndex) + 1 ) / FS + 5e-3;
-    finish_index = find( abs( (psth_time(1, :) - window_end) ) < 1e-4, 1 )
+    finish_index = find( abs( (psth_time(1, :) - window_end) ) < 1e-4, 1 );
 
 
 ramp_indices = round(10e-3*FS);
