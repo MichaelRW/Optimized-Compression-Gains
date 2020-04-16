@@ -76,6 +76,9 @@ collector = struct('data_file',data_file,'spl',spl,'adj',adj,'loss',loss,...
 % (controlled by control_phoneme). The newly added phoneme is tested with
 % all adjustment steps from vetor adj (see loop starting in line 130)
 
+mr_lengthOfWindow_workingPhoneme = nan;
+mr_lengthOfWindow_priorPhonemes = nan;
+
 % for control_phoneme = 2:1:( length(start) - 1 )
 for control_phoneme = 2: 1 : (length(start)-1)
     
@@ -100,9 +103,28 @@ for control_phoneme = 2: 1 : (length(start)-1)
     psth_normal = make_psth_struct( pre_sentence, FS,  get_spl( pre_sentence ), ...
         1, 'none', CFcount, IOHC_loss, binwidth, 'healthy' );
     
-    % Applies window (ramps) to the working phoneme.why?
-    window = get_window( start(control_phoneme), stop(control_phoneme), FS,...
-             psth_normal.psth_time, psth_normal.psth_freq);
+
+    % Generate masking window for working phoneme.
+    %
+    % The masking window region for the working phoneme is set to 1.
+    % The masking window region for all of the previous phonemes is set to 0.
+    %
+    if ( control_phoneme == 2 )
+        mr_lengthOfWindow_workingPhoneme = size(psth_normal.psth, 2);
+        mr_lengthOfWindow_priorPhonemes = size(psth_normal.psth, 2);
+        %
+        window = ones( size(psth_normal.psth) );
+            figure; imagesc(window); grid on; colorbar;
+            
+    else
+        mr_lengthOfWindow_workingPhoneme = size(psth_normal.psth, 2) - mr_lengthOfWindow_priorPhonemes;
+            mr_lengthOfWindow_priorPhonemes = mr_lengthOfWindow_priorPhonemes + mr_lengthOfWindow_workingPhoneme;
+        %
+        window = zeros( size(psth_normal.psth) );
+            window(:, (mr_lengthOfWindow_priorPhonemes - mr_lengthOfWindow_workingPhoneme + 1):end) = 1;
+                figure; imagesc(window); grid on; colorbar;
+                
+    end
     
     % creates the struct that will later contain the error metrics between the
     % different neurograms, 
@@ -140,11 +162,7 @@ for control_phoneme = 2: 1 : (length(start)-1)
         % adjusted phoneme
         psth_impair = make_psth_struct( pre_sentence, FS,  get_spl(pre_sentence), ...
             loss, pres, CFcount, IOHC_loss, binwidth, synaptopathy );
-        
-        % Applies window (ramps) to the working phoneme.why?
-        window = get_window( start(control_phoneme), stop(control_phoneme), FS, ...
-                 psth_impair.psth_time, psth_impair.psth_freq);
-        
+                
         % Appends the currently tested gain adjustment step.
         error_m.ADJ = [ error_m.ADJ adj(control_adj) ];
         
